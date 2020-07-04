@@ -5,6 +5,14 @@
   </div>
 </div>
 <%= form_for @post do |f| %>
+  <div class="form-group">
+      <%= f.label :park, 'イメージ' %>
+      <%= f.file_field :image, class: 'form-control' %>
+      <small id="park-tip" class="form-text text-muted">
+         イメージ写真を挿入してください。
+      </small>
+    </div>
+
     <div class="form-group">
       <%= f.label :park, '公園' %>
       <%= f.text_field :park, class: 'form-control' %>

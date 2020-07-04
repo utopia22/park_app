@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  def index
+     def index
         @posts = Post.all.order(created_at: :desc)
       end
 
@@ -9,6 +9,8 @@ class PostsController < ApplicationController
 
       def create
           Post.create(post_params)
+
+          redirect_to :action => :index
       end
 
       def show

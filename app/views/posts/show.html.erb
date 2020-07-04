@@ -1,0 +1,26 @@
+
+
+<div class="d-flex align-items-center mt-4 mb-4">
+    <div class="ml-auto posts_button">
+        <a class="btn btn-outline-info" href="/posts" role="button">投稿一覧</a>
+        <a class="btn btn-outline-info" href="/posts" role="button">編集</a>
+    </div>
+</div>
+
+<div class="card">
+  <div class="card-header bg-info text-white">
+    <h4><%= @post.park %></h4>
+  </div>
+  概要
+  <div class="card-body">
+    <p class="card-text"><%= simple_format(@post.outline) %></p>
+  </div>
+  所在地
+  <div class="card-body">
+    <p class="card-text"><%= simple_format(@post.location) %></p>
+  </div>
+  交通アクセス
+  <div class="card-body">
+    <p class="card-text"><%= simple_format(@post.access) %></p>
+  </div>
+</div>
