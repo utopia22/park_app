@@ -1,11 +1,11 @@
 <%= render 'shared/flash_messages' %>
-
-<div class="d-flex align-parks-center">
+<div class="d-flex align-items-center">
     <h1>公園一覧</h1>
+    <div class="ml-auto posts_button">
+      <%= link_to '投稿', new_post_path, class: "btn btn-outline-info" %>
+    </div>
 </div>
-<div class="ml-auto posts_button">
-   <%= link_to '投稿', new_post_path, class: "btn btn-outline-info" %>
-</div>
+
 <table class="table table-bordered border-primary table-hover table-sm posts_table">
   <thead class="thead-light">
     <tr>
