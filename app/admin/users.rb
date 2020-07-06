@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
 
-    permit_params :name, :age, :address
+    permit_params :image, :park, :outline, :location, :access
 
 end

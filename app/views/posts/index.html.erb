@@ -1,9 +1,7 @@
-<%= render 'shared/flash_messages' %>
+<div class="container">
+  <%= render 'shared/flash_messages' %>
 <div class="d-flex align-items-center">
     <h1>公園一覧</h1>
-    <div class="ml-auto posts_button">
-      <%= link_to '投稿', new_post_path, class: "btn btn-outline-info" %>
-    </div>
 </div>
 
 <table class="table table-bordered border-primary table-hover table-sm posts_table">
@@ -16,7 +14,6 @@
       <th scope="col">交通アクセス</th>
       <th scope="col">投稿日</th>
       <th scope="col">更新日時</th>
-      <th></th>
       <th></th>
     </tr>
   </thead>
@@ -32,8 +29,8 @@
             <td><%= post.created_at %></td>
             <td><%= post.updated_at %></td>
             <td><%= link_to "詳細" , post, class: 'btn btn-outline-info' %></td>
-            <td><%= link_to "削除" , post, class: 'btn btn-outline-info', method: :delete, data: {confirm: "投稿記事を削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></td>
         </tr>
       <% end %>
   </tbody>
 </table>
+</div>
