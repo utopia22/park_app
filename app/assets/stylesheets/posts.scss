@@ -39,3 +39,41 @@
 .prak{
   margin: 10px 0;
 }
+
+/*show*/
+.show{
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid gray;
+}
+
+.show-image{
+  text-align: center;
+}
+
+.show-image{
+  width: 60%;
+}
+
+
+.park{
+  margin-top: 10px;
+}
+
+.btn-stitch {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;
+  color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 5px #668ad8;
+  border: dashed 1px #FFF;
+  margin: 20px 0;
+  width: 70%;
+}
+
+.btn-stitch:hover {
+  border: dotted 1px #FFF;
+}
