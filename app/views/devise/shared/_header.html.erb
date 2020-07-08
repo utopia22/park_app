@@ -1,24 +1,11 @@
-<header>
-  <nav class="navbar navbar-expand navbar-light">
-    <%= link_to "Deviseサンプル", root_path, class: 'navbar-brand' %>
-    <div id="Navber">
-      <ul class="navbar-nav">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to 'アカウント編集', edit_user_registration_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-          </li>
-      <% else %>
-          <li class="nav-item active">
-            <%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to "ログイン", new_user_session_path, class: 'nav-link' %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </nav>
-</header>
+<% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
+  <!-- ユーザーがログインしていた時の処理 -->
+  <h2> 現在 <%= current_user.name %> さんがログインしています </h2> <!-- ここを追加します -->
+  <h4> メールアドレス： <%= current_user.email %> </h4>
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
+<% else %>
+  <!-- ユーザーがログインしていなかった時の処理 -->
+  <h2> 現在ログインしていません </h2>
+  <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
+  <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
+<% end %>
