@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div id="Navber">
       <ul class="navbar-nav">
@@ -19,3 +20,15 @@
       </ul>
     </div>
   </nav>
+=======
+<% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
+  <!-- ユーザーがログインしていた時の処理 -->
+  <p> 現在 <%= current_user.name %> さんがログインしています <p2> <!-- ここを追加します -->
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
+<% else %>
+  <!-- ユーザーがログインしていなかった時の処理 -->
+  <p> 現在ログインしていません <p>
+  <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
+  <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
+<% end %>
+>>>>>>> 4a42badc885ba6d8b63d05fae30848233474b018

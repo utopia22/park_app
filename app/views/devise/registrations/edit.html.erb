@@ -1,4 +1,8 @@
+<<<<<<< HEAD
  <h1>アカウント編集</h1>
+=======
+<h2><%= t('.title', resource: resource.model_name.human) %></h2>
+>>>>>>> 4a42badc885ba6d8b63d05fae30848233474b018
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -38,10 +42,14 @@
 
 <h3><%= t('.cancel_my_account') %></h3>
 
+<<<<<<< HEAD
 <hr class="devise-link my-5">
 <div class="form-group">
   <%= link_to "トップページ", root_path, class: 'btn btn-info btn-block mb-4' %>
   <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: {confirm: t('.are_you_sure')}, method: :delete, class: 'btn btn-danger btn-block' %>
 </div>
+=======
+<p><%= t('.unhappy') %> <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %></p>
+>>>>>>> 4a42badc885ba6d8b63d05fae30848233474b018
 
 <%= link_to t('devise.shared.links.back'), :back %>
