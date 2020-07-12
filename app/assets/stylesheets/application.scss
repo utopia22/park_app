@@ -19,7 +19,17 @@
 @import "posts";
 
 
-
+//header
+header {
+  width: 100%;
+  height: 200px;
+  padding: 5px 0;
+  text-align: center;
+  color: #a52a2a;
+  background-image: url("little_park.png");
+  background-position: center bottom;
+  background-size: cover;
+}
 
 
 // ログイン画面
