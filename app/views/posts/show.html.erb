@@ -22,14 +22,5 @@
             <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
         </div>
 
-        <% if !post like_users.include?(current_user) %>
-          <%= link_to likes_path(post_id: post.id), method: :post do %>
-            <i class="far fa-heart like-btn" ></i>
-        <% end %>
-        <% else %>
-           <%= link_to likes_path(post_id: post.id), method: :delete do %>
-             <i class="fas fa-heart unlike-btn"></i>
-        <% end %>
-        <% end %>
 
 </div>
