@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-   before_action :set_post, only: [:create, :destroy]
+   before_action only: [:create, :destroy]
 
    def index
      @like_post = current_user.like_posts
@@ -19,7 +19,7 @@ class LikesController < ApplicationController
 
 
   def destroy
-      @like = Like.find_by(user_id: @current_user.id, post_id: params[:post_id])
+      @like = Like.find_by(user_id: current_user.id, post_id: params[:post_id])
       @like.destroy
        redirect_to posts_path, success: 'いいねを取り消しました'
   end
