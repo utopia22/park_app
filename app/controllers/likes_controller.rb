@@ -24,5 +24,4 @@ class LikesController < ApplicationController
        redirect_to posts_path, success: 'いいねを取り消しました'
   end
 
-
 end
