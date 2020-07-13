@@ -11,4 +11,10 @@ Rails.application.routes.draw do
     get 'my_page' => 'users/registrations#my_page'
   end
 
+  get 'likes/index'
+  post '/likes', to:'likes#create'
+
+  delete '/likes', to: 'likes#destroy'
+
+
 end
