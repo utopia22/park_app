@@ -1,26 +1,25 @@
 <div class="show container">
 
-        <div class="show-park">
-            <p><%= @post.park %></p>
-        </div>
-        <div class="show-image">
-            <%= image_tag @post.image_url(:thumb) if @post.image.present? %>
-        </div>
-        <div class="show-outline">
-            <p><%= @post.outline %></p>
-        </div>
-        <div class="show-locate">
-            <p>所在地</p>
-            <p><%= @post.location %></p>
-        </div>
-        <div class="show-access">
-            <p>アクセス</p>
-            <p><%= @post.access %></p>
-        </div>
+  <div class="show-park">
+    <p><%= @post.park %></p>
+  </div>
+  <div class="show-image">
+    <%= image_tag @post.image_url(:thumb) if @post.image.present? %>
+  </div>
+  <div class="show-outline">
+    <p><%= @post.outline %></p>
+  </div>
+  <div class="show-locate">
+    <p>所在地</p>
+    <p><%= @post.location %></p>
+  </div>
+  <div class="show-access">
+      <p>アクセス</p>
+      <p><%= @post.access %></p>
+  </div>
 
-        <div class="ml-auto posts_button">
-            <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
-        </div>
-
+   <div class="ml-auto posts_button">
+     <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
+   </div>
 
 </div>
