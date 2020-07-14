@@ -6,6 +6,7 @@
   <div class="show-image">
     <%= image_tag @post.image_url(:thumb) if @post.image.present? %>
   </div>
+
   <div class="show-outline">
     <p><%= @post.outline %></p>
   </div>

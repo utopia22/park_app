@@ -1,6 +1,5 @@
 class LikesController < ApplicationController
-   before_action only: [:create, :destroy]
-
+   before_action :authenticate_user!, only: [:create, :destroy]
    def index
      @like_post = current_user.like_posts
    end
@@ -17,11 +16,14 @@ class LikesController < ApplicationController
      end
     end
 
-
      def destroy
        @like = Like.find_by(user_id: current_user.id, post_id: params[:post_id])
        @like.destroy
-      redirect_to posts_path, success: 'いいねを取り消しました'
-  end
+        redirect_to posts_path, success: 'いいねを取り消しました'
+     end
+
+     def move_to_index
+       redirect_to action: :index unless user_signed_in?
+     end
 
 end

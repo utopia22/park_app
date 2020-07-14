@@ -18,8 +18,13 @@
 @import "base";
 @import "posts";
 
-
-
+// ヘッダー
+#cover {
+  background-image: url("park.png");
+  height: 200px;
+  width: 1500px;
+  background-size: cover;
+}
 
 
 // ログイン画面
