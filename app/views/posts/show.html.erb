@@ -6,6 +6,7 @@
   <div class="show-image">
     <%= image_tag @post.image_url(:thumb) if @post.image.present? %>
   </div>
+
   <div class="show-outline">
     <p><%= @post.outline %></p>
   </div>
@@ -17,6 +18,19 @@
       <p>アクセス</p>
       <p><%= @post.access %></p>
   </div>
+
+  <div class="like-left">
+    <% if !@post.like_users.include?(current_user) %>
+      <%= link_to likes_path(post_id: @post.id), method: :post do %>
+        <i class="far fa-heart like-btn" ></i>
+      <% end %>
+     <% else %>
+       <%= link_to likes_path(post_id: @post.id), method: :delete do %>
+         <i class="far fa-heart unlike-btn"></i>
+       <% end %>
+     <% end %>
+     <%= @post.like_users.count %>
+   </div>
 
    <div class="ml-auto posts_button">
      <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
