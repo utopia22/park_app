@@ -36,3 +36,22 @@
 .alert-alert {
   @extend .alert-danger;
 }
+
+//header
+header {
+  height: 300px;
+  width: 100%;
+  padding: 15px 0;
+  background-color: #FFFFFF;
+  background-image: url("park_header.jpg");
+  background-position: center top;
+  background-size: cover;
+  opacity: 0.5;
+  color: white;
+}
+
+
+
+body {
+  background-color: #CCFFFF
+}
