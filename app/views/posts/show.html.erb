@@ -32,6 +32,20 @@
      <%= @post.like_users.count %>
    </div>
 
+   <%= form_for [@post, @comment], method: :post do |f| %>
+     <%= f.text_field :comment %>
+     <br>
+     <%= f.submit 'レビューする' %>
+   <% end %>
+  <br>
+
+ <p>口コミ一覧</p>
+   <% @comments.each do |c| %>
+       <%= c.comment %>
+       <hr>
+   <% end %>
+
+
    <div class="ml-auto posts_button">
      <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
    </div>
