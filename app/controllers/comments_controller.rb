@@ -1,11 +1,13 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+
   def create
-    @comment = current_user.comments.new(comment_params)
+    @comment = Comment.new(comment_params)
+    @post = @comment.post
     if @comment.save
-      respond_to :js
+      redirect_back(fallback_location: root_path)
     else
-      flash[:alert] = "コメントに失敗しました"
+      redirect_back(fallback_location: root_path)
     end
   end
 

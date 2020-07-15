@@ -5,6 +5,13 @@ class PostsController < ApplicationController
     @posts = Post.all.order(created_at: :desc)
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @likes_count = Like.where(post_id: @post.id).count
+    @comments = @post.comments
+     @comment = Comment.new
+  end
+
   def new
     @post = Post.new
   end
@@ -13,13 +20,6 @@ class PostsController < ApplicationController
     Post.create(post_params)
 
     redirect_to :action => :index
-   end
-
-   def show
-     @post = Post.find(params[:id])
-     @likes_count = Like.where(post_id: @post.id).count
-     @comments = @post.comments
-     @comment = current_user.comments.new 
    end
 
    def edit
