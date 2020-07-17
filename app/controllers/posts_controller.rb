@@ -19,8 +19,8 @@ class PostsController < ApplicationController
   def create
     Post.create(post_params)
 
-    redirect_to :action => :index
-   end
+     redirect_to :action => :index
+  end
 
    def edit
      @post = Post.find(params[:id])
@@ -32,28 +32,28 @@ class PostsController < ApplicationController
      redirect_to post
    end
 
-    def destroy
-      post = Post.find(params[:id])
-      post.delete
+  def destroy
+    post = Post.find(params[:id])
+    post.delete
 
-      redirect_to posts_path
-    end
+    redirect_to posts_path
+  end
 
-    def move_to_index
-      redirect_to action: :index unless user_signed_in?
-    end
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
 
-    def hashtag
-      @user = current_user
-      @tag = Hashtag.find_by(hashname: params[:name])
-      @posts = @tag.posts.build
-      @post  = @tag.posts.page(params[:page])
-    end
+  def hashtag
+    @user = current_user
+    @tag = Hashtag.find_by(hashname: params[:name])
+    @posts = @tag.posts.build
+    @post  = @tag.posts.page(params[:page])
 
+  end
 
-    private
+  private
 
-    def post_params
-      params.require(:post).permit(:image, :hashbody, :park, :outline, :location, :access, hashtag_ids: [])
-    end
+  def post_params
+    params.require(:post).permit(:image, :hashbody, :park, :outline, :location, :access, hashtag_ids: [])
+  end
 end
