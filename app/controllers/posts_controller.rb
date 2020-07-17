@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @likes_count = Like.where(post_id: @post.id).count
     @comments = @post.comments
-     @comment = Comment.new
+    @comment = Comment.new
   end
 
   def new
@@ -43,10 +43,17 @@ class PostsController < ApplicationController
       redirect_to action: :index unless user_signed_in?
     end
 
+    def hashtag
+      @user = current_user
+      @tag = Hashtag.find_by(hashname: params[:name])
+      @posts = @tag.posts.build
+      @post  = @tag.posts.page(params[:page])
+    end
+
 
     private
 
     def post_params
-      params.require(:post).permit(:image, :park, :outline, :location, :access)
+      params.require(:post).permit(:image, :hashbody, :park, :outline, :location, :access, hashtag_ids: [])
     end
 end

@@ -13,6 +13,7 @@
           <div class="park">
             <p><%= link_to(post.park,"/posts/#{post.id}") %></p>
             <p><%= post.access %></p>
+            <p><%= render_with_hashtags(post.hashbody) %></p>
           </div>
          </div>
 

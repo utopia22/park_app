@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root "posts#index"
-  
+
   devise_for :users
   resources :posts do
     resources :comments, only: [:create, :destroy]
@@ -20,5 +20,7 @@ Rails.application.routes.draw do
 
   delete '/likes', to: 'likes#destroy'
 
+  get '/post/hashtag/:name' => 'posts#hashtag'
+  get '/post/hashtag' => 'posts#hashtag'
 
 end
