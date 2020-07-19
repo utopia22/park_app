@@ -35,7 +35,7 @@
    <div id="comment-post-<%= @post.id.to_s %>">
      <%= render 'comment_list', { post: @post } %>
    </div>
-  
+
     <hr>
     <div class="row actions" id="comment-form-post-<%= @post.id.to_s %>">
       <%= form_with model: [@post, Comment.new], class: "w-100" do |f| %>

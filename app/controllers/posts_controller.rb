@@ -17,20 +17,24 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
+    post = Post.new(post_params)
 
-     redirect_to :action => :index
+    if @postnew.save
+      redirect_to posts_path
+    else
+      render('posts/new')
+    end
   end
 
-   def edit
-     @post = Post.find(params[:id])
-   end
+  def edit
+    @post = Post.find(params[:id])
+  end
 
-   def update
-     post = Post.find(params[:id])
-     post.update(post_params)
-     redirect_to post
-   end
+  def update
+    post = Post.find(params[:id])
+    post.update(post_params)
+    redirect_to post
+  end
 
   def destroy
     post = Post.find(params[:id])
@@ -44,16 +48,14 @@ class PostsController < ApplicationController
   end
 
   def hashtag
-    @user = current_user
     @tag = Hashtag.find_by(hashname: params[:name])
     @posts = @tag.posts.build
     @post  = @tag.posts.page(params[:page])
-
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:image, :hashbody, :park, :outline, :location, :access, hashtag_ids: [])
+    params.require(:post).permit(:image, :hashbody, :park, :outline, :location, :access)
   end
 end
