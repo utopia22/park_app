@@ -19,7 +19,7 @@
       <p><%= @post.access %></p>
   </div>
 
-
+  <div id="likes_buttons_<%= @post.id %>">
     <% unless @post.like_user(current_user.id).blank? %>
       <%= link_to post_like_path(post_id: @post.id ,id: @post.likes[0].id), method: :delete, remote: true do %>
         <div class="vertical_like">
@@ -39,6 +39,7 @@
           </div>
         <% end %>
       <% end %>
+    </div>
 
 
 
