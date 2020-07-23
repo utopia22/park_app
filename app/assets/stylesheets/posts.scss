@@ -35,7 +35,13 @@
 .content-wrapper{
   padding: 15px;
   overflow:hidden;
+  border-radius: 10%;
 }
+
+.content {
+  border-radius: 10%;
+}
+
 
 .prak{
   margin: 10px 0;
@@ -78,4 +84,18 @@
 
 .btn-stitch:hover {
   border: dotted 1px #FFF;
+}
+
+.delete-comment {
+  background-image: image-url("parts8");
+  background-repeat: no-repeat;
+  width: 11px;
+  height: 11px;
+  float: right;
+  margin: 5px 0 0 10px;
+  background-size: 11px !important;
+}
+
+.likes_buttons {
+  margin-left: 10px;
 }
