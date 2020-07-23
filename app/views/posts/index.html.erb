@@ -17,7 +17,8 @@
               <%= render_with_hashtags(post.hashbody) %>
             </div>
           </div>
-             <div class="likes-mark">
+
+             <div class="posts-mark">
                <div id="likes_buttons_<%= post.id %>">
                  <%= render partial: 'likes/like', locals: { post: post, likes: @likes} %>
                </div>
