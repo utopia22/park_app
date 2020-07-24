@@ -18,16 +18,17 @@
             </div>
           </div>
 
-             <div class="posts-mark">
-               <div id="likes_buttons_<%= post.id %>">
-                 <%= render partial: 'likes/like', locals: { post: post, likes: @likes} %>
-               </div>
-             </div>
+
+          <div class="posts-mark">
+            <div id="likes_buttons_<%= post.id %>">
+              <%= render partial: 'likes/like', locals: { post: post, likes: @likes} %>
+            </div>
+          </div>
 
 
-       <% end %>
+        <% end %>
+        </div>
       </div>
-    </div>
     <% end %>
   </div>
 </div>
