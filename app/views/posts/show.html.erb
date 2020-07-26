@@ -23,7 +23,27 @@
     <iframe src="https://maps.google.co.jp/maps?output=embed&q=<%= @post.location %>"></iframe>
   </div>
 
+  <h2>gmap</h2>
+
+<!-- 地名入力用のinputを追加 -->
+<input id="address" type="textbox" value="Sydney, NSW">
+
+<!-- buttonをクリックしたらcodeAddressを実行　-->
+<input type="button" value="Encode" onclick="codeAddress()">
+<div id='map'>
+</div>
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDtWJ1SNDv5ihQnErxLwbgiHyflWaUvX34
+    &q=<% @post.location %>" allowfullscreen>
+</iframe>
+
+
   <div id="likes_buttons_<%= @post.id %>">
+
     <% unless @post.like_user(current_user.id).blank? %>
       <%= link_to post_like_path(post_id: @post.id ,id: @post.likes[0].id), method: :delete, remote: true do %>
         <div class="vertical_like">
