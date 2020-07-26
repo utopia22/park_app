@@ -43,8 +43,8 @@
      }
      let geocoder
      function codeAddress(){
-         let inputAddress = document.getElementById('address').value;
-         geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+       let inputAddress = document.getElementById('address').value;
+       geocoder.geocode( { 'address': inputAddress}, function(results, status) {
              if (status == 'OK') {
                  map.setCenter(results[0].geometry.location);
                  var marker = new google.maps.Marker({
@@ -58,7 +58,6 @@
      }
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtWJ1SNDv5ihQnErxLwbgiHyflWaUvX34&callback=initMap"></script>
-
 
   <div id="likes_buttons_<%= @post.id %>">
 
