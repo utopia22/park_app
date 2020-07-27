@@ -18,6 +18,45 @@
   height: 200px;
 }
 
+//indexのsearch機能
+placeholder {
+
+}
+
+.hidden {
+  display: none;
+}
+
+form.search-form {
+  padding: 20px 0px 10px 0px;
+  position: relative;
+  max-width: 350px;
+}
+
+form.aria-label {
+
+}
+
+  i.search-icon {
+    position: absolute;
+    top: 35%;
+    left: 10px;
+    z-index: 12;
+  }
+
+  #search-park {
+    padding-left: 30px;
+  }
+
+  input.search-park {
+    padding-left: 30px;
+  }
+
+  input::placeholder{
+    padding-left: 0px;
+    color: #80e080;
+    font-weight: bold;
+  }
 
 /*main-contents*/
 .main-contents{
@@ -63,7 +102,7 @@
 .show-image{
   text-align: center;
   width: 60%;
-margin: auto auto 15px auto;
+  margin: auto auto 15px auto;
 }
 
 iframe {
