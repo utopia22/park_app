@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   get '/post/hashtag/:name' => 'posts#hashtag'
   get '/post/hashtag' => 'posts#hashtag'
 
+  get 'tags/:tag', to: 'posts#index', as: :tag
+
 end

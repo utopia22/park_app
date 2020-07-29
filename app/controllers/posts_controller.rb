@@ -3,6 +3,11 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order(created_at: :desc)
+    if params[:tag]
+      @posts = Post.tagged_with("#{params[:tag]}")
+    end
+
+    @tags = ActsAsTaggableOn::Tag.all
   end
 
   def show
@@ -14,6 +19,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @tags = ActsAsTaggableOn::Tag.all
   end
 
   def create
@@ -22,6 +28,7 @@ class PostsController < ApplicationController
     if post.save
       redirect_to posts_path
     else
+      @tags = ActsAsTaggableOn::Tag.all
       render('posts/new')
     end
   end
@@ -56,6 +63,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:image, :hashbody, :park, :outline, :location, :access)
+    params.require(:post).permit(:image, :hashbody, :park, :outline, :location, :access, :tag_list)
   end
 end
