@@ -26,7 +26,6 @@
             <div class="park">
               <p><%= link_to(post.park,"/posts/#{post.id}") %></p>
               <p><%= post.access %></p>
-              <%= render_with_hashtags(post.hashbody) %>
               <%= raw(post.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')) %>
             </div>
           </div>

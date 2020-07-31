@@ -82,8 +82,8 @@ ActiveRecord::Schema.define(version: 2020_07_27_123536) do
     t.string "access"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "hashbody"
     t.integer "likes_count"
+    t.string "tag_list"
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
