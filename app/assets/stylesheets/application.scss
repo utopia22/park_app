@@ -1,21 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
 @import "bootstrap/scss/bootstrap";
-@import "base";
 @import "posts";
 
 
@@ -38,29 +21,45 @@
 }
 
 //header
-*{
-   margin: 0;
-   padding: 0;
-   }
 
-   header {
+header {
   background-size: cover;
   height: 200px;
   width: 100%;
   padding: 15px 0;
-  background-color: #FFFFFF;
-  background-image: url("header.jpg");
+  background-image: url("header3.jpg");
   background-position: center top;
   background-size: cover;
   opacity: 0.5;
-  color: white;
 }
 
-nav {
-  text-decoration: none;
-  height: 30px;
-  background-color: #99FF99;
+.header-logo {
+  font-family: Pacifico, sans-serif;
+  font-size: 50px;
+  color: #99FF99 !important;
+  display: inline-block;
+  margin-left: 20px;
 }
+
+.header-menus {
+  float: right;
+  padding-right: 20px;
+}
+
+.header-menus li {
+  float: left;
+  line-height: 30px;
+  font-size: 13px;
+  color: white;
+  padding-left: 15px;
+}
+
+.header-menus a {
+  float: left;
+  font-size: 15px;
+  color:white;
+}
+
 
 body {
   background-color: #CCFFFF;
@@ -69,4 +68,5 @@ body {
 //footer
 footer {
   background-color: #99FF99;
+  color: white;
 }
