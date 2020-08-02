@@ -1,13 +1,16 @@
-<div class="show-container">
-  <h1>マイページ</h1>
-  <h3><%= @user.name %></h3>
-  <div class="user-image">
-    <%= image_tag @user.image_name.to_s  %>
- </div>
+<div class="main user-show">
+  <div class="container">
+    <div class="user">
+      <div class="show-image">
+        <%= image_tag @user.image_name.to_s  %>
+      </div>
+      <h2><%= @user.name %></h2>
+      <p><%= @user.email %></p>
+    </div>
+  </div>
+</div>
   <hr>
 
   <div class="show-index">
     <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
   </div>
-
-</div>
