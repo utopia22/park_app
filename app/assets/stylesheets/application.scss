@@ -29,13 +29,14 @@ header {
   padding: 15px 0;
   background-image: url("header3.jpg");
   background-position: center top;
-  color: #FFCCFF
+  background-size: cover;
+  opacity: 0.5;
 }
 
 .header-logo {
   font-family: Pacifico, sans-serif;
   font-size: 50px;
-  color: #99FF99 !important;
+  color: #99FF99;
   display: inline-block;
   margin-left: 20px;
 }

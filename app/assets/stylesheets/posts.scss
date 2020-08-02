@@ -1,3 +1,15 @@
+.posts_button {
+    a {
+        margin: 0 8px;
+    }
+}
+
+.posts_table {
+    tr:hover {
+        cursor: pointer;
+    }
+}
+
 /* index */
 .thumbnail {
   float: left;
@@ -7,6 +19,9 @@
 }
 
 //indexのsearch機能
+placeholder {
+
+}
 
 .hidden {
   display: none;
@@ -16,6 +31,10 @@ form.search-form {
   padding: 20px 0px 10px 0px;
   position: relative;
   max-width: 350px;
+}
+
+form.aria-label {
+
 }
 
   i.search-icon {
@@ -58,14 +77,16 @@ form.search-form {
   border-radius: 10%;
 }
 
+.content {
+  border-radius: 10%;
+}
+
+
 .prak{
   margin: 10px 0;
 }
 
-.tags-index {
-}
-
-.map-index {
+.my-map {
   margin-left: 738px;
 }
 
@@ -110,7 +131,13 @@ iframe {
 }
 
 
+.btn-stitch {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+
 .click
 {
-  color: pink;
+  color: blue;
 }
