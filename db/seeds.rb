@@ -13,3 +13,12 @@ array.each{ |tag|
   tag_list.name = tag
   tag_list.save
 }
+
+[
+  [image: File.open('./app/assets/images/otikawa.jpg'), '落川公園', '公園の外周には三方に水路がのびており、ザリガニとりや水遊びが楽しめます。見通しのよい芝生の広場は親子連れでにぎわっています。日影が少ないので、夏場は帽子を忘れずに。', '日野市落川2012番地', '百草園駅より東へ徒歩約10分', '#水遊び #アスレチック #芝生 #ボール遊び'],
+  [image: File.open('./app/assets/images/otikawa.jpg'), 'ほどくぼ地区広場', '少し傾斜のある草原と雑木林。遊具はありませんが、木登り、草すべり、どんぐり拾いなどが楽しめます。原っぱなので、はだしでかけまわっても大丈夫。ただし、周辺に人家が少ないので、子どもの一人遊びは避けたほうがよいでしょう。', '日野市程久保3丁目22番地の2', '京王線多摩動物公園駅より東へ徒歩5分']
+].each do |img,name,outline,location,access,tag_list|
+  Post.create!(
+    {image: img, name: name, outline: outline, location: location, access: access, tag_list: tag_list}
+  )
+end
