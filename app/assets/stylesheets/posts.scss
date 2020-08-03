@@ -1,15 +1,3 @@
-.posts_button {
-    a {
-        margin: 0 8px;
-    }
-}
-
-.posts_table {
-    tr:hover {
-        cursor: pointer;
-    }
-}
-
 /* index */
 .thumbnail {
   float: left;
@@ -86,8 +74,52 @@ form.aria-label {
   margin: 10px 0;
 }
 
-.my-map {
+.map-index {
   margin-left: 738px;
+}
+
+/*モダール*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.modal-involve{
+  margin: 0 auto;
+  padding: 40px;
+}
+.modal{
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.modal__bg{
+    background: rgba(0,0,0,0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+.modal__content{
+    background: #fff;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+}
+
+.js-modal-open {
+  display: inline;
+  margin-left: auto;
+  float: left;
+}
+
+.material-icons {
+  margin-bottom: -5px;
 }
 
 /*show*/

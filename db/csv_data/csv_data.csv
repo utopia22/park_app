@@ -1,0 +1,2 @@
+image,park,outline,location,access,tag_list
+File.open("#{Rails.root}/public/uploads/post/image/1/yatoguti.jpg"),谷戸口公園,程久保の知る人ぞ知る,東京都日野市程久保１丁目２０−１４,モノレール程久保駅から徒歩5分,#砂場
