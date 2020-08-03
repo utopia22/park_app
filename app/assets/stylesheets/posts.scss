@@ -93,14 +93,12 @@ form.aria-label {
     top: 0;
     width: 100%;
 }
-
 .modal__bg{
     background: rgba(0,0,0,0.8);
     height: 100vh;
     position: absolute;
     width: 100%;
 }
-
 .modal__content{
     background: #fff;
     left: 50%;
@@ -121,6 +119,16 @@ form.aria-label {
    background-color: #99FF99;
    transition: background-color .2s ease-in-out;
    cursor: pointer;
+}
+
+.js-modal-open span{
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.material-icons {
+  margin-bottom: -5px;
 }
 
 /*show*/
