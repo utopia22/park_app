@@ -78,27 +78,14 @@ form.aria-label {
   margin-left: 738px;
 }
 
-<<<<<<< HEAD
-/*モダール*/
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-=======
 
 /*modal*/
 
->>>>>>> shadow
 .modal-involve{
   margin: 0 auto;
   padding: 40px;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> shadow
 .modal{
     display: none;
     height: 100vh;
@@ -106,12 +93,14 @@ form.aria-label {
     top: 0;
     width: 100%;
 }
+
 .modal__bg{
     background: rgba(0,0,0,0.8);
     height: 100vh;
     position: absolute;
     width: 100%;
 }
+
 .modal__content{
     background: #fff;
     left: 50%;
@@ -122,6 +111,17 @@ form.aria-label {
     width: 60%;
 }
 
+.modal-involve {
+  position: relative;
+  display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 300px;
+   height: 20px;
+   background-color: #99FF99;
+   transition: background-color .2s ease-in-out;
+   cursor: pointer;
+}
 
 /*show*/
 .show{
