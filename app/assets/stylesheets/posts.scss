@@ -78,6 +78,7 @@ form.aria-label {
   margin-left: 738px;
 }
 
+<<<<<<< HEAD
 /*モダール*/
 
 *{
@@ -85,10 +86,19 @@ form.aria-label {
     margin: 0;
     padding: 0;
 }
+=======
+
+/*modal*/
+
+>>>>>>> shadow
 .modal-involve{
   margin: 0 auto;
   padding: 40px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> shadow
 .modal{
     display: none;
     height: 100vh;
@@ -112,15 +122,6 @@ form.aria-label {
     width: 60%;
 }
 
-.js-modal-open {
-  display: inline;
-  margin-left: auto;
-  float: left;
-}
-
-.material-icons {
-  margin-bottom: -5px;
-}
 
 /*show*/
 .show{

@@ -22,7 +22,10 @@ document.addEventListener('turbolinks:load', () => {
     });
 })
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> shadow
 $(function(){
     $('.js-modal-open').each(function(){
         $(this).on('click',function(){
