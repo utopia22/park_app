@@ -6,13 +6,13 @@
       <div class="users-index-item">
 
         <div class="user-left">
-          <%= image_tag @user.image_name.to_s  %>
+          <%= image_tag user.image_name.to_s, :size => "60x60" %>
+        </div>
 
         </div>
         <div class="user-right">
           <%= link_to(user.name, "/users/#{user.id}") %>
         </div>
-      </div>
      <% end %>
   </div>
 </div>

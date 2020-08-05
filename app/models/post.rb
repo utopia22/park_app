@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   has_many :hashtags, through: :hashtag_posts
 
   def like_user(user_id)
-   likes.find_by(user_id: user_id)
+    likes.find_by(user_id: user_id)
   end
 
   acts_as_taggable
