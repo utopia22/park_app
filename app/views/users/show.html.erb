@@ -2,7 +2,7 @@
   <div class="container">
     <div class="user">
       <div class="show-image">
-        <%= image_tag @user.image_name.to_s  %>
+        <%= image_tag @user.image_name.to_s, :size => "60x60" %>
       </div>
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>

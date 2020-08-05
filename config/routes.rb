@@ -5,13 +5,12 @@ Rails.application.routes.draw do
   root "posts#index"
 
   devise_for :users
+  resources :users, only: [:show]
 
   resources :posts do
     resources :comments, only: [:create, :destroy]
     resources :likes, only: [:create, :destroy]
   end
-
-  resources :users
 
   devise_scope :user do
     get 'my_page' => 'users/registrations#my_page'

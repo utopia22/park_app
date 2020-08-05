@@ -82,8 +82,17 @@ form.aria-label {
 /*modal*/
 
 .modal-involve{
+  display: block;
+  background: linear-gradient(to right, #00FF00 0%, #00FF00 50%, #009900 50%, #009900 0%);
   margin: 0 auto;
-  padding: 40px;
+  width: 300px;
+  height: 60px;
+  border-radius: 40px;
+}
+
+.modal-involve a {
+  font-size: 14px;
+  color: #FFFFFF;
 }
 
 .modal{
@@ -93,14 +102,14 @@ form.aria-label {
     top: 0;
     width: 100%;
 }
+
 .modal__bg{
-    background: rgba(0,0,0,0.8);
+   background: rgba(0,0,0,0.1);
     height: 100vh;
     position: absolute;
     width: 100%;
 }
-.modal__content{
-    background: #fff;
+.modal__content {
     left: 50%;
     padding: 40px;
     position: absolute;
