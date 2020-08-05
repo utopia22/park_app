@@ -1,26 +1,6 @@
-<div class="main users-edit">
-  <div class="container">
-    <div class="form-heading">アカウント編集</div>
-    <div class="form users-form">
-      <div class="form-body">
-      
-        <% @user.errors.full_messages.each do |message| %>
-          <div class="form-error">
-            <%= message %>
-          </div>
-        <% end %>
+<h1>プロフィール編集</h1>
 
-        <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
-          <p>ユーザー名</p>
-          <input name = "name" value="<%= @user.name %>">
-          <p>画像</p>
-          <input name="image" type="file">
-          <p>メールアドレス</p>
-          <input name = "email" value="<%= @user.email %>">
-          <input type="submit" value="保存">
-        <% end %>
-
-      </div>
-    </div>
-  </div>
-</div>
+<%= form_with model: @user do |form| %>
+  <div>user_name<%= form.text_field :user_name %></div>
+  <div><%= form.submit "保存" %></div>
+<% end %>
