@@ -3,7 +3,7 @@
   <div class="show-park">
     <p><%= @post.park %></p>
   </div>
-  <div class="show-image">
+  <div class="post-show-image">
     <%= image_tag @post.image_url(:thumb) if @post.image.present? %>
   </div>
 

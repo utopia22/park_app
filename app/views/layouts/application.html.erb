@@ -18,8 +18,9 @@
 
   <body>
     <%= render 'shared/header' %>
-    <%= yield :cover %>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
   </body>
 </html>

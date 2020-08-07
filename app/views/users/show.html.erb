@@ -1,16 +1,19 @@
-<div class="main user-show">
-  <div class="container">
-    <div class="user">
+<div class="user-show">
       <div class="show-image">
         <%= image_tag @user.image_name.to_s, :size => "100x100" %>
       </div>
-      <h3><%= @user.name %></h3>
-      <p><%= @user.email %></p>
-    </div>
-  </div>
+      <div class="user-content">
+        <h3><%= @user.name %></h3>
+        <p><%= @user.email %></p>
+        <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-info" %>
+      </div>
 </div>
+
+<br>
 <hr>
+<br>
 
 <div class="show-index">
   <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
 </div>
+<br>

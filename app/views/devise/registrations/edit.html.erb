@@ -5,6 +5,15 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :image_name %><br/>
+    <%= f.file_field :image_name, autofocus: true %><br/>
+  </div>
+  <div class="field">
+   <%= f.label :name %><br />
+   <%= f.text_field :name, autofocus: true %>
+ </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -36,8 +45,6 @@
     <%= f.submit t('.update') %>
   </div>
 <% end %>
-
-<h3><%= t('.cancel_my_account') %></h3>
 
 
 <hr class="devise-link my-5">
