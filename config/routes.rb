@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   root "posts#index"
 
   devise_for :users
-  resources :users, only: [:show]
+  get '/users/:id', to: 'users#show', as: 'user'
+  get '/users/', to: 'users#index'
 
   resources :posts do
     resources :comments, only: [:create, :destroy]

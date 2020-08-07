@@ -3,7 +3,7 @@
   <div class="show-park">
     <p><%= @post.park %></p>
   </div>
-  <div class="show-image">
+  <div class="user-show-image">
     <%= image_tag @post.image_url(:thumb) if @post.image.present? %>
   </div>
 
@@ -58,30 +58,13 @@
      }
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtWJ1SNDv5ihQnErxLwbgiHyflWaUvX34&callback=initMap"></script>
-
-  <div id="likes_buttons_<%= @post.id %>">
-
-    <% unless @post.like_user(current_user.id).blank? %>
-      <%= link_to post_like_path(post_id: @post.id ,id: @post.likes[0].id), method: :delete, remote: true do %>
-        <div class="vertical_like">
-          <i class="material-icons red-text">favorite</i>
-          <span class="red-text">
-            <%= @post.like_users.count %>
-          </span>
-        </div>
-      <% end %>
-    <% else %>
-      <%= link_to post_likes_path(@post.id), method: :post, remote: true do %>
-        <div class="vertical_like">
-          <i class="material-icons grey-text text-darken-2">favorite_border</i>
-          <span class="grey-text text-darken-2">
-            <%= @post.like_users.count %>
-           </span>
-          </div>
-        <% end %>
-      <% end %>
+  <br>
+  <div class="posts-mark">
+    <div id="likes_buttons_<%= @post.id %>">
+      <%= render partial: 'likes/like', locals: { post: @post, likes: @likes} %>
     </div>
-
+  </div>
+  <br>
   <div id="comment-post-<%= @post.id.to_s %>">
     <%= render 'comment_list', { post: @post } %>
   </div>
