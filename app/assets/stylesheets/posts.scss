@@ -74,8 +74,9 @@ form.aria-label {
   margin: 10px 0;
 }
 
-.map-index {
-  margin-left: 738px;
+.my-map {
+  display: block;
+  margin: auto;
 }
 
 
@@ -86,8 +87,13 @@ form.aria-label {
   background: linear-gradient(to right, #00FF00 0%, #00FF00 50%, #009900 50%, #009900 0%);
   margin: 0 auto;
   width: 300px;
-  height: 60px;
+  height: 40px;
   border-radius: 40px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .modal-involve a {
@@ -104,11 +110,13 @@ form.aria-label {
 }
 
 .modal__bg{
-   background: rgba(0,0,0,0.1);
+   background: rgba(255, 255, 255, .95);
+   opacity: 0.7;
     height: 100vh;
     position: absolute;
     width: 100%;
 }
+
 .modal__content {
     left: 50%;
     padding: 40px;
@@ -116,18 +124,6 @@ form.aria-label {
     top: 50%;
     transform: translate(-50%,-50%);
     width: 60%;
-}
-
-.modal-involve {
-  position: relative;
-  display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 300px;
-   height: 20px;
-   background-color: #99FF99;
-   transition: background-color .2s ease-in-out;
-   cursor: pointer;
 }
 
 .js-modal-open span{
@@ -140,8 +136,9 @@ form.aria-label {
   margin-bottom: -5px;
 }
 
+
 /*show*/
-.show{
+.post-show{
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -149,10 +146,22 @@ form.aria-label {
   background: #FFFFFF
 }
 
-.post-show-image {
+.post-show-image{
+  text-align: center;
+  width: 400px;
+  height: 300px;
+  margin: auto auto 15px auto;
+}
+
+
+.show-image {
   text-align: center;
   width: 60%;
   margin: auto auto 15px auto;
+}
+
+.user-content {
+  text-align: center;
 }
 
 iframe {
