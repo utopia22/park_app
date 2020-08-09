@@ -6,6 +6,19 @@
   height: 200px;
 }
 
+.posts-mark {
+  display: flex;
+}
+
+.comment-list span {
+  text-decoration: none;
+}
+
+.comment-count {
+  position:relative;
+  top: 7px;
+}
+
 //indexのsearch機能
 placeholder {
 
@@ -163,6 +176,7 @@ form.aria-label {
 .user-content {
   text-align: center;
 }
+
 
 iframe {
   margin-left: 30px;
