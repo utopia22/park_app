@@ -1,3 +1,11 @@
-// Place all the styles related to the comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+span .comment-user-image {
+ display: inline-block;
+ float: left;
+}
+
+.comment-user-image img {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 40%;
+}

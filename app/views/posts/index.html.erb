@@ -24,6 +24,14 @@
             <div id="likes_buttons_<%= post.id %>">
               <%= render partial: 'likes/like', locals: { post: post, likes: @likes} %>
             </div>
+            <div class="comment-list">
+              <%= link_to("/posts/#{post.id}") do %>
+    　        <span class="fa fa-comment-o fa-lg" aria-hidden="true"></span>
+              <% end %>
+                <span class="comment-count">
+                  <%= post.comments.count %>
+                </span>
+            </div>
           </div>
 
         <% end %>
