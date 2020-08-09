@@ -1,6 +1,8 @@
+
 @import "bootstrap/scss/bootstrap";
 @import "posts";
 @import "users";
+@import "comments";
 
 
 // ログイン画面
@@ -13,7 +15,7 @@
 
 // 「ログインしました」などのフラッシュ用スタイル
 
-.alert-notice {
+.alert-no1tice {
   @extend .alert-info;
 }
 
@@ -34,12 +36,15 @@ header {
   opacity: 0.5;
 }
 
-.header-logo {
+ .logo {
   font-family: Pacifico, sans-serif;
   font-size: 50px;
-  color: #99FF99;
   display: inline-block;
   margin-left: 20px;
+}
+
+header h1 {
+  color: #FFCCFF;
 }
 
 .header-menus {
