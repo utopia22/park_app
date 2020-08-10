@@ -6,7 +6,11 @@
       <div class="user-content">
         <h3><%= @user.name %></h3>
         <p><%= @user.email %></p>
-        <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-info" %>
+
+        <% if current_user.id ==  @user.id %>
+          <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-info" %>
+        <% end %>
+
       </div>
 </div>
 
