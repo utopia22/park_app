@@ -82,8 +82,8 @@ ActiveRecord::Schema.define(version: 2020_08_05_104730) do
     t.string "access"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "hashbody"
     t.integer "likes_count"
-    t.string "tag_list"
     t.integer "user_id"
   end
 
