@@ -13,9 +13,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
 
-  devise_scope :user do
-    get 'my_page' => 'users/registrations#my_page'
-  end
+  get "users/:id/likes" => "users#likes"
 
   get '/post/hashtag/:name' => 'posts#hashtag'
   get '/post/hashtag' => 'posts#hashtag'
