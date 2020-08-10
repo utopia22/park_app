@@ -11,11 +11,13 @@
 }
 
 .comment-list span {
-  text-decoration: none;
+ display: inline-block;
+ text-decoration: none;
 }
 
 .comment-count {
   position:relative;
+  width: 10px;
   top: 7px;
 }
 
@@ -87,9 +89,8 @@ form.aria-label {
   margin: 10px 0;
 }
 
-.my-map {
-  display: block;
-  margin: auto;
+.map-index {
+  margin-left: 738px;
 }
 
 
@@ -123,13 +124,11 @@ form.aria-label {
 }
 
 .modal__bg{
-   background: rgba(255, 255, 255, .95);
-   opacity: 0.7;
+   background: rgba(0,0,0,0.3);
     height: 100vh;
     position: absolute;
     width: 100%;
 }
-
 .modal__content {
     left: 50%;
     padding: 40px;
@@ -176,7 +175,6 @@ form.aria-label {
 .user-content {
   text-align: center;
 }
-
 
 iframe {
   margin-left: 30px;

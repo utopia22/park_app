@@ -6,7 +6,6 @@
   <div class="post-show-image">
     <%= image_tag @post.image_url(:thumb) if @post.image.present? %>
   </div>
-
   <div class="show-outline">
     <p><%= @post.outline %></p>
   </div>
@@ -28,6 +27,7 @@
        margin-left: 55px;
        height: 300px;
        width: 450px;
+       background-color: white;
       }
      </style>
      <script>
@@ -38,7 +38,7 @@
              zoom: 12,
          });
          marker = new google.maps.Marker({
-             map: map
+            map: map
          });
      }
      let geocoder
@@ -75,9 +75,6 @@
   <div id="comment-post-<%= @post.id.to_s %>">
     <%= render 'comment_list', { post: @post } %>
   </div>
-
-  <hr>
-
 
    <br>
    <div class="ml-auto posts_button">

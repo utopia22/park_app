@@ -14,7 +14,7 @@
 
 // 「ログインしました」などのフラッシュ用スタイル
 
-.alert-no1tice {
+.alert-notice {
   @extend .alert-info;
 }
 
@@ -35,15 +35,12 @@ header {
   opacity: 0.5;
 }
 
- .logo {
+.header-logo {
   font-family: Pacifico, sans-serif;
   font-size: 50px;
+  color: #99FF99;
   display: inline-block;
   margin-left: 20px;
-}
-
-header h1 {
-  color: #FFCCFF;
 }
 
 .header-menus {
@@ -74,5 +71,4 @@ body {
 footer {
   background-color: #99FF99;
   color: white;
-  width: 100%;
 }
