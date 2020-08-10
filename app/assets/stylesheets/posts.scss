@@ -212,3 +212,21 @@ iframe {
 {
   color: blue;
 }
+
+.user-tabs li {
+  float: left;
+}
+
+.user-tabs li.active {
+  border-bottom: 2px solid #3ecdc6;
+}
+
+.user-tabs li.active a {
+  color: #57575f;
+}
+
+.user-tabs a {
+  display: inline-block;
+  padding: 16px 30px;
+  color: #afb6bf;
+}
