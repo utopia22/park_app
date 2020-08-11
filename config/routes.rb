@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   get "users/:id/likes" => "users#likes"
+  get "posts/:id/likes" => "posts#likes"
 
   get '/post/hashtag/:name' => 'posts#hashtag'
   get '/post/hashtag' => 'posts#hashtag'

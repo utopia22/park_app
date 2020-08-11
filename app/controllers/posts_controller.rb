@@ -61,6 +61,11 @@ class PostsController < ApplicationController
     @post  = @tag.posts.page(params[:page])
   end
 
+  def likes
+    @post = Post.find_by(id: params[:id])
+    @likes = Like.where(post_id: params[:id])
+  end
+
   private
 
   def post_params
