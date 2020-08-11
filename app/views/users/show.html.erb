@@ -14,21 +14,22 @@
 
       <ul class="user-tabs">
         <li class="active"><%= link_to("「レビュー」した公園", "/users/#{@user.id}") %></li>
-        <li class="active"><%= link_to("「いいね！」した公園", "/users/#{@user.id}/likes") %></li>
-       </ul>
+        <li><%= link_to("「いいね！」した公園", "/users/#{@user.id}/likes") %></li>
+      </ul>
 
         <% @user.comments.each do |comment| %>
           <div class="posts-index-item">
-            <div class="post-left">
+            <div class="post-user-image">
               <%= image_tag comment.post.image.to_s %>
             </div>
-            <div class="post-right">
             <div class="post-user-name">
-              <%= link_to(comment.comment, "/posts/#{comment.post.id}") %>
+              <%= link_to(comment.post.park, "/posts/#{comment.post.id}") %>
+            </div>
+            <div class="post-ruser-comment">
+              <%= comment.comment %>
             </div>
           </div>
         <% end %>
-
 
 </div>
 

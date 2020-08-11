@@ -13,23 +13,21 @@
       </div>
 
       <ul class="user-tabs">
-        <li class="active"><%= link_to("レビューした公園", "/users/#{@user.id}") %></li>
+        <li><%= link_to("レビューした公園", "/users/#{@user.id}") %></li>
         <li class="active"><%= link_to("「いいね！」した公園", "/users/#{@user.id}/likes") %></li>
        </ul>
 
         <% @likes.each do |like| %>
           <% post = Post.find_by(id: like.post_id) %>
-          <div class="posts-index-item">
-            <div class="post-left">
-              <%= image_tag post.image.to_s %>
+            <div class="posts-index-item">
+              <div class="post-user-image">
+                <%= image_tag post.image.to_s %>
+              </div>
+              <div class="post-user-name">
+                <%= link_to(post.park, "/posts/#{post.id}") %>
+              </div>
             </div>
-            <div class="post-right">
-              <%= link_to(post.park, "/posts/#{post.id}") %>
-            </div>
-          </div>
         <% end %>
-
-      </div>
 
 
       <br>
@@ -37,6 +35,6 @@
       <br>
 
       <div class="show-index">
-      <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
+        <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
       </div>
       <br>
