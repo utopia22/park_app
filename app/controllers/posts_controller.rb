@@ -55,12 +55,6 @@ class PostsController < ApplicationController
     redirect_to action: :index unless user_signed_in?
   end
 
-  def hashtag
-    @tag = Hashtag.find_by(hashname: params[:name])
-    @posts = @tag.posts.build
-    @post  = @tag.posts.page(params[:page])
-  end
-
   def likes
     @post = Post.find_by(id: params[:id])
     @likes = Like.where(post_id: params[:id])
