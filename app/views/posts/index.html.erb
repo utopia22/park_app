@@ -28,9 +28,9 @@
               <%= link_to("/posts/#{post.id}") do %>
     　        <span class="fa fa-comment-o fa-lg" aria-hidden="true"></span>
               <% end %>
-                <span class="comment-count">
+                <a class="comment-count">
                   <%= post.comments.count %>
-                </span>
+                </a>
             </div>
           </div>
 
