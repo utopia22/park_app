@@ -1,5 +1,4 @@
 /*index*/
-
 .users-heading {
   font-weight: 200px;
   margin: 60px 0 20px;
@@ -28,25 +27,21 @@
   object-fit: cover;
 }
 
-.user-name a {
-  font-weight: 600;
-}
-
-.user-name a:hover {
-  color: #3ecdc6;
-}
-
 .user-left {
-  float: left;
   width: 10%;
 }
 
 .user-right {
+  display: flex;
   width: 90%;
   padding-left: 25px;
   text-align: left;
   display: table-cell;
   vertical-align: middle;
+}
+
+.user-content {
+  text-align: center;
 }
 
 
@@ -61,8 +56,45 @@
   box-shadow: 0 2px 6px #c1ced7;
 }
 
-.user-content {
-  text-align: center;
+.post-user-image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 20px 0 10px;
+  object-fit: cover;
+}
+
+.posts-index-item {
+  background-color: white;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+
+.user-tabs {
+  margin-top: 40px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.user-tabs li {
+  float: left;
+}
+
+.user-tabs li.active {
+  border-bottom: 2px solid #3ecdc6;
+}
+
+.user-tabs li.active a {
+  color: #57575f;
+}
+
+.user-tabs a {
+  display: inline-block;
+  padding: 16px 30px;
+  color: #afb6bf;
 }
 
 /*ログイン画面*/

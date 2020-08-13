@@ -51,22 +51,6 @@ ActiveRecord::Schema.define(version: 2020_08_05_104730) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "hashtag_posts", force: :cascade do |t|
-    t.bigint "post_id", null: false
-    t.bigint "hashtag_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["hashtag_id"], name: "index_hashtag_posts_on_hashtag_id"
-    t.index ["post_id"], name: "index_hashtag_posts_on_post_id"
-  end
-
-  create_table "hashtags", force: :cascade do |t|
-    t.string "hashname"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["hashname"], name: "index_hashtags_on_hashname", unique: true
-  end
-
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_id"
@@ -82,7 +66,6 @@ ActiveRecord::Schema.define(version: 2020_08_05_104730) do
     t.string "access"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "hashbody"
     t.integer "likes_count"
     t.integer "user_id"
   end
@@ -130,7 +113,5 @@ ActiveRecord::Schema.define(version: 2020_08_05_104730) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "hashtag_posts", "hashtags"
-  add_foreign_key "hashtag_posts", "posts"
   add_foreign_key "taggings", "tags"
 end
