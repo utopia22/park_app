@@ -1,7 +1,7 @@
 <div class="post-show">
 
   <div class="show-park">
-    <p><i class="fa fa-leaf" aria-hidden="true"></i><%= @post.park %></p>
+    <p><i class="fa fa-leaf" aria-hidden="true"></i> <%= @post.park %></p>
   </div>
   <div class="post-show-image">
     <%= image_tag @post.image_url(:thumb) if @post.image.present? %>
@@ -11,15 +11,15 @@
     <p><%= @post.outline %></p>
   </div>
   <div class="show-locate">
-    <p><i class="fa fa-map-marker"></i>所在地</p>
+    <p><i class="fa fa-map-marker"></i> 所在地</p>
     <p><%= @post.location %></p>
   </div>
   <div class="show-access">
-    <p><i class="fa fa-train"></i>アクセス</p>
+    <p><i class="fa fa-train"></i> アクセス</p>
     <p><%= @post.access %></p>
   </div>
 
-  <p><i class="fa fa-map" aria-hidden="true"></i>公園の地図</p>
+  <p><i class="fa fa-map" aria-hidden="true"></i> 公園の地図</p>
      <input id="address" type="textbox" value="<%= @post.location %>">
      <input type="button" value="クリックして地図で見る" onclick="codeAddress()">
      <div id='map'></div>
