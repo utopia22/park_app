@@ -4,26 +4,26 @@
   </div>
   <ul class="header-menus">
     <% if user_signed_in? %>
-      <li>
+      <li class="btn btn-outline-success">
         <%= link_to "公園一覧", root_path %>
       </li>
-      <li>
+      <li class="btn btn-outline-success">
         <%= link_to("ユーザー一覧", "/users") %>
       </li>
-      <li class="nav-item active">
+      <li class="btn btn-outline-success">
         <%= link_to "マイページへ", user_path(current_user.id) %>
       </li>
-      <li>
+      <li class="btn btn-outline-success">
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
       </li>
      <% else %>
-       <li>
+       <li class="btn btn-outline-success">
          <%= link_to "公園一覧", root_path %>
        </li>
-       <li>
+       <li class="btn btn-outline-success">
          <%= link_to "新規登録", new_user_registration_path %>
        </li>
-       <li>
+       <li class="btn btn-outline-success">
          <%= link_to "ログイン", new_user_session_path %>
        </li>
     <% end %>

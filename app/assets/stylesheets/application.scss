@@ -25,6 +25,7 @@
 //header
 
 header {
+  color: #FFFFFF;
   background-size: cover;
   height: 200px;
   width: 100%;
@@ -32,19 +33,18 @@ header {
   background-image: url("header3.jpg");
   background-position: center top;
   background-size: cover;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .header-menus :hover {
   display: inline-block;
   text-decoration: none;
-  color: #FF99CC;
 }
 
 .header-logo {
   font-family: Pacifico, sans-serif;
-  font-size: 50px;
-  color: #99FF99;
+  font-size: 45px;
+  color: white;
   display: inline-block;
   margin-left: 20px;
 }
@@ -70,7 +70,7 @@ header {
 
 
 body {
-  background-color: #CCFFFF;
+  background-color: #CCFFFF
 }
 
 //footer

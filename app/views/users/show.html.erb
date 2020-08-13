@@ -2,16 +2,14 @@
       <div class="user-show-image">
         <%= image_tag @user.image_name.to_s %>
       </div>
-      <br>
       <div class="user-content">
         <h3><%= @user.name %></h3>
         <p><%= @user.email %></p>
-
         <% if current_user.id ==  @user.id %>
           <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-info" %>
         <% end %>
-      </div>
 
+      </div>
       <ul class="user-tabs">
         <li class="active"><%= link_to("「レビュー」した公園", "/users/#{@user.id}") %></li>
         <li><%= link_to("「いいね！」した公園", "/users/#{@user.id}/likes") %></li>
