@@ -1,24 +1,24 @@
 <div class="post-show">
-
   <div class="show-park">
-    <p><%= @post.park %></p>
+    <p><i class="fa fa-leaf" aria-hidden="true"></i><%= @post.park %></p>
   </div>
   <div class="post-show-image">
     <%= image_tag @post.image_url(:thumb) if @post.image.present? %>
   </div>
+  <br>
   <div class="show-outline">
     <p><%= @post.outline %></p>
   </div>
   <div class="show-locate">
-    <p>所在地</p>
+    <p><i class="fa fa-map-marker"></i>所在地</p>
     <p><%= @post.location %></p>
   </div>
   <div class="show-access">
-      <p>アクセス</p>
-      <p><%= @post.access %></p>
-  </div>
+    <p><i class="fa fa-train"></i>アクセス</p>
+    <p><%= @post.access %></p>
+ </div>
 
-  <p>公園の場所</p>
+  <p><i class="fa fa-map" aria-hidden="true"></i></i>公園の地図</p>
      <input id="address" type="textbox" value="<%= @post.location %>">
      <input type="button" value="クリックして地図で見る" onclick="codeAddress()">
      <div id='map'></div>
@@ -64,14 +64,12 @@
       <%= render partial: 'likes/like', locals: { post: @post, likes: @likes} %>
     </div>
   </div>
-
-
   <br>
-  <div class="row actions" id="comment-form-post-<%= @post.id.to_s %>">
+  <div class="row-actions" id="comment-form-post-<%= @post.id.to_s %>">
     <%= form_with model: [@post, Comment.new], class: "w-100" do |f| %>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.hidden_field :post_id, value: @post.id %>
-      <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "レビューする ...", autocomplete: :off %>
+      <%= f.text_field :comment, class: "form-control comment-input border-0",placeholder: "レビューする ...", autocomplete: :off %>
     <% end %>
   </div>
 
@@ -84,9 +82,12 @@
     <%= render 'comment_list', { post: @post } %>
   </div>
 
-   <br>
-   <div class="ml-auto posts_button">
-     <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
-   </div>
+    <br>
+    <hr>
+    <br>
+
+<div class="ml-auto posts_button">
+  <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
+</div>
 
 </div>
