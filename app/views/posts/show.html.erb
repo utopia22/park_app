@@ -64,15 +64,18 @@
       <%= render partial: 'likes/like', locals: { post: @post, likes: @likes} %>
     </div>
   </div>
+
+
   <br>
+
   <div class="row-actions" id="comment-form-post-<%= @post.id.to_s %>">
     <%= form_with model: [@post, Comment.new], class: "w-100" do |f| %>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.hidden_field :post_id, value: @post.id %>
-      <%= f.text_field :comment, class: "form-control comment-input border-0",placeholder: "レビューする ...", autocomplete: :off %>
+      <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "レビューする ...", autocomplete: :off %>
     <% end %>
   </div>
-
+  
   <ul class="user-tabs">
     <li class="active"><%= link_to("「レビュー」したユーザー", "/posts/#{@post.id}") %></li>
     <li><%= link_to("「いいね！」したユーザー", "/posts/#{@post.id}/likes") %></li>
