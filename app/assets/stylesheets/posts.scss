@@ -71,6 +71,8 @@ form.search-form {
   margin-top: 20px;
   background: #FFFFFF;
   border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 7px #c1ced7;
 }
 
 .main-image img{
@@ -166,6 +168,7 @@ form.search-form {
   padding: 20px;
   border-radius: 10px;
   border: 1px solid gray;
+  box-shadow: 0 6px 12px #c1ced7;
   background: #FFFFFF
 }
 
