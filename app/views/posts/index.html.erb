@@ -16,7 +16,9 @@
             <div class="park">
               <p><i class="fa fa-leaf" aria-hidden="true"></i> <%= link_to(post.park,"/posts/#{post.id}") %></p>
               <p><i class="fa fa-train" aria-hidden="true"></i> <%= post.access %></p>
-              <%= raw(post.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')) %>
+              <span class="tag-list">
+                <%= raw(post.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')) %>
+              </span>
             </div>
           </div>
 

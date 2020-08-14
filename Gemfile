@@ -40,4 +40,3 @@ gem 'redcarpet', '~> 2.3.0'
 gem 'devise-bootstrap-views', '~> 1.0'
 
 gem 'acts-as-taggable-on', '~> 6.0'
-gem 'uglifier', '~> 2.7'
