@@ -31,7 +31,6 @@ gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
 gem 'activeadmin'
 
-
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'carrierwave'
 gem 'rmagick'
