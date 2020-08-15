@@ -99,6 +99,7 @@ GEM
     devise-i18n (1.9.1)
       devise (>= 4.7.1)
     erubi (1.9.0)
+    execjs (2.7.0)
     ffi (1.13.1)
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
@@ -246,6 +247,8 @@ GEM
     tilt (2.0.10)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
+    uglifier (4.2.0)
+      execjs (>= 0.3.0, < 3)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (4.0.4)
@@ -288,6 +291,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
+  uglifier
   web-console (>= 3.3.0)
   webpacker (~> 4.0)
 
