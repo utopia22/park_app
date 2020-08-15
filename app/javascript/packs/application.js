@@ -4,10 +4,10 @@ require("bootstrap/dist/js/bootstrap")
 
 $(function () {
     $('#search-park').keyup(function () {
-        const $railsText = $("#search-park").val().toLowerCase()
+        const $park = $("#search-park").val().toLowerCase()
         $('.main-contents').each(function () {
             const val = $(this).text();
-            if (val.toLowerCase().includes($railsText)) {
+            if (val.toLowerCase().includes($park)) {
                 $(this).show();
             } else {
                 $(this).hide();
