@@ -4,7 +4,6 @@ require("channels")
 require("bootstrap/dist/js/bootstrap")
 require('jquery')
 
-
 $(function () {
     $('#search-park').keyup(function () {
         const $railsText = $("#search-park").val().toLowerCase()
