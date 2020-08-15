@@ -293,7 +293,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
-  uglifier (~> 2.7)
+  uglifier
   web-console (>= 3.3.0)
   webpacker (~> 4.0)
 
