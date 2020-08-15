@@ -6,7 +6,6 @@ require("bootstrap/dist/js/bootstrap")
 require('jquery')
 
 
-document.addEventListener('turbolinks:load', () => {
     $(function () {
         $('#search-park').keyup(function () {
             const $railsText = $("#search-park").val().toLowerCase()
@@ -20,7 +19,7 @@ document.addEventListener('turbolinks:load', () => {
             });
         });
     });
-})
+
 
 
 $(function(){
