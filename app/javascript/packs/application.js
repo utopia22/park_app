@@ -2,7 +2,7 @@ require("@rails/ujs").start()
 require("bootstrap/dist/js/bootstrap")
 
 
-$(document).ready(function () {
+$(function () {
     $('#search-park').keyup(function () {
         const $park = $("#search-park").val().toLowerCase()
         $('.main-contents').each(function () {
@@ -17,7 +17,7 @@ $(document).ready(function () {
 });
 
 
-$(document).ready(function(){
+$(function(){
     $('.js-modal-open').each(function(){
         $(this).on('click',function(){
             var target = $(this).data('target');
