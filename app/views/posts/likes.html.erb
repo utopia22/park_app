@@ -32,6 +32,12 @@
   </div>
   <br>
   <br>
+  <div class="posts-mark">
+  <div id="likes_buttons_<%= @post.id %>">
+     <%= render partial: 'likes/like', locals: { post: @post, likes: @likes} %>
+  </div>
+ </div>
+ <br>
   <div class="row-actions" id="comment-form-post-<%= @post.id.to_s %>">
     <%= form_with model: [@post, Comment.new], class: "w-100" do |f| %>
       <%= f.hidden_field :user_id, value: current_user.id %>
@@ -41,19 +47,28 @@
   </div>
 
   <ul class="user-tabs">
-    <li class="active"><%= link_to("「レビュー」したユーザー", "/posts/#{@post.id}") %></li>
-    <li><%= link_to("「いいね！」したユーザー", "/posts/#{@post.id}/likes") %></li>
+    <li><%= link_to("「レビュー」したユーザー", "/posts/#{@post.id}") %></li>
+    <li  class="active"><%= link_to("「いいね！」したユーザー", "/posts/#{@post.id}/likes") %></li>
   </ul>
-
-  <div id="comment-post-<%= @post.id.to_s %>">
-    <%= render 'comment_list', { post: @post } %>
-  </div>
+  <br>
+  <% @post.likes.each do |like| %>
+    <div class="mb-2">
+      <span>
+        <div class="comment-user-image">
+          <%= image_tag like.user.image_name.to_s %>
+        </div>
+        <strong>
+          <%= link_to like.user.name, user_path(like.user), class: "no-text-decoration black-color" %>
+        </strong>
+      </span>
+    </div>
+  <% end %>
 
   <br>
   <hr>
   <br>
   <div class="ml-auto posts_button">
-     <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
+    <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
   </div>
 
 </div>

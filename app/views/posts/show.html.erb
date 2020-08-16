@@ -16,27 +16,28 @@
   <div class="show-access">
     <p><i class="fa fa-train"> </i> アクセス</p>
     <p><%= @post.access %></p>
- </div>
- <div class="p-map">
-   <p><i class="fa fa-map" aria-hidden="true"> </i> 公園の地図</p>
-   <iframe
-     src="https://maps.google.co.jp/maps?output=embed&q=<%= @post.location %>&t=m&z=15"
-     width="100%"
-     height="auto"
-     frameborder="0"
-     style="border:0"
-     allowfullscreen
-   >
+  </div>
+  <div class="p-map">
+    <p><i class="fa fa-map" aria-hidden="true"> </i> 公園の地図</p>
+    <iframe
+       src="https://maps.google.co.jp/maps?output=embed&q=<%= @post.location %>&t=m&z=15"
+       width="100%"
+       height="auto"
+       frameborder="0"
+       style="border:0"
+       allowfullscreen
+     >
    </iframe>
- <br>
- <br>
- <div class="posts-mark">
-   <div id="likes_buttons_<%= @post.id %>">
-     <%= render partial: 'likes/like', locals: { post: @post, likes: @likes} %>
    </div>
- </div>
+   <br>
+   <br>
+   <div class="posts-mark">
+   <div id="likes_buttons_<%= @post.id %>">
+      <%= render partial: 'likes/like', locals: { post: @post, likes: @likes} %>
+   </div>
+  </div>
 
- <br>
+  <br>
 
    <div class="row-actions" id="comment-form-post-<%= @post.id.to_s %>">
      <%= form_with model: [@post, Comment.new], class: "w-100" do |f| %>
@@ -50,7 +51,7 @@
      <li class="active"><%= link_to("「レビュー」したユーザー", "/posts/#{@post.id}") %></li>
      <li><%= link_to("「いいね！」したユーザー", "/posts/#{@post.id}/likes") %></li>
    </ul>
-
+   <br>
    <div id="comment-post-<%= @post.id.to_s %>">
      <%= render 'comment_list', { post: @post } %>
    </div>
@@ -58,8 +59,8 @@
    <br>
    <hr>
    <br>
-   <div class="ml-auto posts_button">
+    <div class="ml-auto posts_button">
       <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
-   </div>
+    </div>
 
 </div>
