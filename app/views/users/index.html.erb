@@ -4,7 +4,6 @@
 
     <% @users.each do |user| %>
       <div class="users-index-item">
-        
         <div class="user-left">
           <%= image_tag user.image_name.to_s, :size => "60x60" %>
         </div>
@@ -13,5 +12,12 @@
         </div>
       </div>
     <% end %>
+    <br>
+    <hr>
+    <br>
+      <div class="show-index">
+        <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
+      </div>
+    <br>
   </div>
 </div>
