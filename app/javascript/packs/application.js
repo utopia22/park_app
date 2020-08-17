@@ -2,6 +2,7 @@ require("@rails/ujs").start()
 require("bootstrap/dist/js/bootstrap")
 
 
+
 $(function () {
     $('#search-park').keyup(function () {
         const $park = $("#search-park").val().toLowerCase()
