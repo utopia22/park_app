@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root "posts#index"
-
+  
   devise_for :users
   get '/users/:id', to: 'users#show', as: 'user'
   get '/users/', to: 'users#index'

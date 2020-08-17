@@ -9,14 +9,14 @@
           <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-info" %>
         <% end %>
   </div>
+  <br>
 
   <ul class="user-tabs">
     <li class="active"><%= link_to("「レビュー」した公園", "/users/#{@user.id}") %></li>
     <li><%= link_to("「いいね！」した公園", "/users/#{@user.id}/likes") %></li>
   </ul>
-
-  <% @user.comments.each do |comment| %>
-    <div class="posts-index-item">
+  <div class="posts-index-item">
+    <% @user.comments.each do |comment| %>
       <div class="post-user-image">
         <%= image_tag comment.post.image.to_s %>
       </div>
@@ -26,15 +26,14 @@
       <div class="post-ruser-comment">
         <%= comment.comment %>
       </div>
+    <% end %>
+  <br>
+  <hr>
+  <br>
+    <div class="show-index">
+      <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
     </div>
-  <% end %>
-</div>
+    <br>
+  </div>
 
-<br>
-<hr>
-<br>
-
-<div class="show-index">
-  <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
 </div>
-<br>

@@ -16,81 +16,51 @@
   <div class="show-access">
     <p><i class="fa fa-train"> </i> アクセス</p>
     <p><%= @post.access %></p>
- </div>
-
-  <p><i class="fa fa-map" aria-hidden="true"> </i> 公園の地図</p>
-     <input id="address" type="textbox" value="<%= @post.location %>">
-     <input type="button" value="クリックして地図で見る" onclick="codeAddress()">
-     <div id='map'></div>
-     <style>
-       #map {
-       margin-left: 55px;
-       height: 300px;
-       width: 450px;
-       background-color: white;
-      }
-     </style>
-     <script>
-     let map
-     function initMap(){
-         geocoder = new google.maps.Geocoder()
-         map = new google.maps.Map(document.getElementById('map'), {
-             zoom: 12,
-         });
-         marker = new google.maps.Marker({
-            map: map
-         });
-     }
-     let geocoder
-     function codeAddress(){
-       let inputAddress = document.getElementById('address').value;
-       geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-             if (status == 'OK') {
-                 map.setCenter(results[0].geometry.location);
-                 var marker = new google.maps.Marker({
-                     map: map,
-                     position: results[0].geometry.location
-                 });
-             } else {
-                 alert('該当する結果がありませんでした：' + status);
-             }
-         });
-     }
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtWJ1SNDv5ihQnErxLwbgiHyflWaUvX34&callback=initMap"></script>
-  <br>
-  <div class="posts-mark">
-    <div id="likes_buttons_<%= @post.id %>">
+  </div>
+  <div class="p-map">
+    <p><i class="fa fa-map" aria-hidden="true"> </i> 公園の地図</p>
+    <iframe
+       src="https://maps.google.co.jp/maps?output=embed&q=<%= @post.location %>&t=m&z=15"
+       width="100%"
+       height="auto"
+       frameborder="0"
+       style="border:0"
+       allowfullscreen
+     >
+   </iframe>
+   </div>
+   <br>
+   <br>
+   <div class="posts-mark">
+   <div id="likes_buttons_<%= @post.id %>">
       <%= render partial: 'likes/like', locals: { post: @post, likes: @likes} %>
-    </div>
+   </div>
   </div>
-
 
   <br>
 
-  <div class="row-actions" id="comment-form-post-<%= @post.id.to_s %>">
-    <%= form_with model: [@post, Comment.new], class: "w-100" do |f| %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
-      <%= f.hidden_field :post_id, value: @post.id %>
-      <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "レビューする ...", autocomplete: :off %>
-    <% end %>
-  </div>
+   <div class="row-actions" id="comment-form-post-<%= @post.id.to_s %>">
+     <%= form_with model: [@post, Comment.new], class: "w-100" do |f| %>
+       <%= f.hidden_field :user_id, value: current_user.id %>
+       <%= f.hidden_field :post_id, value: @post.id %>
+       <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "レビューする ...", autocomplete: :off %>
+     <% end %>
+   </div>
 
-  <ul class="user-tabs">
-    <li class="active"><%= link_to("「レビュー」したユーザー", "/posts/#{@post.id}") %></li>
-    <li><%= link_to("「いいね！」したユーザー", "/posts/#{@post.id}/likes") %></li>
-  </ul>
+   <ul class="user-tabs">
+     <li class="active"><%= link_to("「レビュー」したユーザー", "/posts/#{@post.id}") %></li>
+     <li><%= link_to("「いいね！」したユーザー", "/posts/#{@post.id}/likes") %></li>
+   </ul>
+   <br>
+   <div id="comment-post-<%= @post.id.to_s %>">
+     <%= render 'comment_list', { post: @post } %>
+   </div>
 
-  <div id="comment-post-<%= @post.id.to_s %>">
-    <%= render 'comment_list', { post: @post } %>
-  </div>
-
-    <br>
-    <hr>
-    <br>
-
-<div class="ml-auto posts_button">
-  <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
-</div>
+   <br>
+   <hr>
+   <br>
+    <div class="ml-auto posts_button">
+      <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
+    </div>
 
 </div>

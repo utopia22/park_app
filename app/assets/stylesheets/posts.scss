@@ -33,10 +33,6 @@ a:hover {
 }
 
 //indexのsearch機能
-placeholder {
-
-}
-
 .hidden {
   display: none;
 }
@@ -222,6 +218,10 @@ iframe {
   color: blue;
 }
 
+ .user-tabs {
+  width: 300px;
+}
+
 .user-tabs li {
   float: left;
 }
@@ -238,4 +238,10 @@ iframe {
   display: inline-block;
   padding: 16px 30px;
   color: #afb6bf;
+}
+
+/*map*/
+#target {
+  height: 300px;
+  width: 300px;
 }
