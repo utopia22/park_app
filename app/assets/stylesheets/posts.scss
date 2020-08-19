@@ -184,6 +184,7 @@ width: 100%;
 
 /*show*/
 .post-show{
+  position: relative;
   max-width: 600px;
   margin: 30px auto 30px;
   padding: 20px;
@@ -202,12 +203,6 @@ width: 100%;
 
 .user-content {
   text-align: center;
-}
-
-iframe {
-  margin-left: 30px;
-  width: 500px;
-  height: 300px;
 }
 
 .park{
@@ -241,11 +236,11 @@ iframe {
 }
 
  .user-tabs {
-  width: 300px;
   height: 0;
   overflow: hidden;
   padding-bottom: 56.25%;
-  position: relative;
+  left: 0;
+  top: 0;
 }
 
 .user-tabs li {
@@ -270,16 +265,14 @@ iframe {
 /*map*/
 
 .map-show {
-height: 0;
-overflow: hidden;
-padding-bottom: 56.25%;
-position: relative;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
 }
 
 .map-show iframe {
-position: absolute;
-left: 0;
-top: 0;
-height: 100%;
-width: 100%;
+  margin-left: 30px;
+  width: 500px;
+  height: 300px;
 }
