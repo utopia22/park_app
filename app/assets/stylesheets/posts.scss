@@ -235,12 +235,10 @@ width: 100%;
   color: blue;
 }
 
- .user-tabs {
-  height: 0;
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  left: 0;
-  top: 0;
+.user-tabs {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
 }
 
 .user-tabs li {
