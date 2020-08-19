@@ -159,6 +159,28 @@ form.search-form {
   margin-bottom: -5px;
 }
 
+/*map*/
+
+#target {
+  height: 300px;
+  width: 300px;
+}
+
+.map-index {
+  margin:auto;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.map-index iframe {
+position: absolute;
+left: 0;
+top: 0;
+height: 100%;
+width: 100%;
+}
 
 /*show*/
 .post-show{
@@ -220,6 +242,10 @@ iframe {
 
  .user-tabs {
   width: 300px;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
 }
 
 .user-tabs li {
@@ -240,8 +266,20 @@ iframe {
   color: #afb6bf;
 }
 
+
 /*map*/
-#target {
-  height: 300px;
-  width: 300px;
+
+.map-show {
+height: 0;
+overflow: hidden;
+padding-bottom: 56.25%;
+position: relative;
+}
+
+.map-show iframe {
+position: absolute;
+left: 0;
+top: 0;
+height: 100%;
+width: 100%;
 }
