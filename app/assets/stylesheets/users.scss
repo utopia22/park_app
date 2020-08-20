@@ -19,6 +19,8 @@
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
   display: table;
+  max-width: 100%;
+  height: auto;
 }
 
 
@@ -91,12 +93,14 @@
 
 .user-tabs li {
   float: left;
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .user-tabs li.active {
   border-bottom: 2px solid #3ecdc6;
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .user-tabs li.active a {
