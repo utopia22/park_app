@@ -19,8 +19,6 @@
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
   display: table;
-  max-width: 100%;
-  height: auto;
 }
 
 
@@ -30,6 +28,8 @@
   border-radius: 40%;
   box-shadow: 0 2px 6px #c1ced7;
   object-fit: cover;
+  max-width: 100%;
+  height: auto;
 }
 
 .user-left {
