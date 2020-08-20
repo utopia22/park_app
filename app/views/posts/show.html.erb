@@ -2,6 +2,10 @@
   <div class="show-park">
     <p><i class="fa fa-leaf" aria-hidden="true"></i> <%= @post.park %></p>
   </div>
+  <div class="tag-list">
+    <%= raw(@post.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')) %>
+  </div>
+  <br>
   <div class="post-show-image">
     <%= image_tag @post.image_url(:thumb) if @post.image.present? %>
   </div>
