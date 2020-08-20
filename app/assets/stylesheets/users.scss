@@ -10,17 +10,18 @@
 .main-users-index {
   margin:0 auto;
   margin-bottom: 30px;
-  width: 600px;
+  width: 550px;
 }
 
 .users-index-item {
-  padding: 20px 30px;
+  margin: auto;
+  padding: 20px 20px;
   background-color: white;
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
   display: table;
-  max-width: 100%;
 }
+
 
 .user-left img {
   width: 50px;
@@ -93,10 +94,14 @@
 
 .user-tabs li {
   float: left;
+  max-width: 100%;
+  height: auto;
 }
 
 .user-tabs li.active {
   border-bottom: 2px solid #3ecdc6;
+  max-width: 100%;
+  height: auto;
 }
 
 .user-tabs li.active a {
