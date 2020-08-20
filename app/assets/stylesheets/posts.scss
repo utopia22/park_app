@@ -191,12 +191,18 @@ width: 100%;
   border-radius: 5px;
   border: 1px solid gray;
   box-shadow: 0 6px 12px #c1ced7;
-  background: #FFFFFF
+  background: #FFFFFF;
+}
+
+.post-show-image {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
 }
 
 .post-show-image img {
   margin-left: 30px;
-  text-align: center;
   width: 500px;
   height: 300px;
 }
