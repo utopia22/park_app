@@ -1,8 +1,14 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
-  storage :file
-  process convert: 'jpg'
   
+  if Rails.env.production?
+   storage :fog
+  else
+    storage :file
+  end
+
+  process convert: 'jpg'
+
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
