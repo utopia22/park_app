@@ -35,8 +35,8 @@ gem 'activeadmin'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'carrierwave'
-gem 'rmagick'
+gem 'fog-aws'
+gem 'mini_magick'
 gem 'devise'
 gem 'redcarpet', '~> 2.3.0'
 gem 'acts-as-taggable-on', '~> 6.0'
-gem 'fog-aws'
