@@ -21,7 +21,4 @@ class ImageUploader < CarrierWave::Uploader::Base
     %W[jpg jpeg gif png]
   end
 
-  def filename
-    "#{Time.zone.now.strftime('%Y%m%d%H%M%S')}.jpg" if original_filename.present?
-  end
 end
