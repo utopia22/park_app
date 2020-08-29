@@ -2,14 +2,13 @@
 ![root2](https://user-images.githubusercontent.com/50666202/91636926-77162280-ea3f-11ea-8a18-bba5f33b3dd8.jpeg)
 
 【URL】
-https://little-park.herokuapp.com
-
+https://little-park.herokuapp.com  
 【github】
 https://github.com/utopia22/park_app
 
 ## 使い方
-- 文字、地図、条件タグで、好きな公園を検索出来ます。  
-- 公園の詳細の閲覧や、「いいね」、「ログイン」などを利用したい場合は、新規登録をしてログインします。  
+- 文字、地図、条件タグで、好きな公園を検索出来ます。
+- 公園の詳細の閲覧や、「いいね」、「ログイン」などを利用したい場合は、新規登録をしてログインします。
 - root画面のログインボタンから、  
 
   email【mars@gmail.com】  
