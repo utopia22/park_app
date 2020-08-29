@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
+    flash[:notice] = "公園の詳細を閲覧するにはログインが必要です" unless user_signed_in?
     @posts = Post.all.order(created_at: :desc)
     if params[:tag]
       @posts = Post.tagged_with("#{params[:tag]}")
