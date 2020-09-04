@@ -43,13 +43,15 @@
 
   <br>
 
-   <div class="row-actions" id="comment-form-post-<%= @post.id.to_s %>">
-     <%= form_with model: [@post, Comment.new], class: "w-100" do |f| %>
-       <%= f.hidden_field :user_id, value: current_user.id %>
-       <%= f.hidden_field :post_id, value: @post.id %>
-       <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "レビューする ...", autocomplete: :off %>
-     <% end %>
-   </div>
+  <% if user_signed_in? %>
+    <div class="row-actions" id="comment-form-post-<%= @post.id.to_s %>">
+       <%= form_with model: [@post, Comment.new], class: "w-100" do |f| %>
+         <%= f.hidden_field :user_id, value: current_user.id %>
+         <%= f.hidden_field :post_id, value: @post.id %>
+         <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "レビューする ...", autocomplete: :off %>
+       <% end %>
+     </div>
+  <% end %>
 
    <ul class="user-tabs">
      <li class="active"><%= link_to("「レビュー」したユーザー", "/posts/#{@post.id}") %></li>

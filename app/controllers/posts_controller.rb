@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
-  before_action :move_to_index, except: :index
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    flash[:notice] = "公園の詳細を閲覧するにはログインが必要です" unless user_signed_in?
+    flash[:notice] = "「いいね！」、「レビュー」をするにはログインが必要です。" unless user_signed_in?
     @posts = Post.all.order(created_at: :desc)
     if params[:tag]
       @posts = Post.tagged_with("#{params[:tag]}")
@@ -49,10 +49,6 @@ class PostsController < ApplicationController
     post.delete
 
     redirect_to posts_path
-  end
-
-  def move_to_index
-    redirect_to action: :index unless user_signed_in?
   end
 
   def likes
