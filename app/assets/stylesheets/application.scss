@@ -18,6 +18,26 @@
   padding: 2rem;
 }
 
+.container-edit {
+  border: 1px solid gray;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 7px #c1ced7;
+}
+
+.container-login {
+  border: 1px solid gray;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 7px #c1ced7;
+}
+
 // 「ログインしました」などのフラッシュ用スタイル
 
 .alert-notice {
