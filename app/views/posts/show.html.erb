@@ -48,9 +48,13 @@
        <%= form_with model: [@post, Comment.new], class: "w-100" do |f| %>
          <%= f.hidden_field :user_id, value: current_user.id %>
          <%= f.hidden_field :post_id, value: @post.id %>
-         <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "レビューする ...", autocomplete: :off %>
-       <% end %>
-     </div>
+        <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "レビューする ...", autocomplete: :off %>
+      <% end %>
+    </div>
+  <% else %>
+  <p class="post-review">レビューするにはログインが必要です。</p>
+  <br>
+  <br>
   <% end %>
 
    <ul class="user-tabs">
@@ -58,9 +62,13 @@
      <li><%= link_to("「いいね！」したユーザー", "/posts/#{@post.id}/likes") %></li>
    </ul>
    <br>
-   <div id="comment-post-<%= @post.id.to_s %>">
-     <%= render 'comment_list', { post: @post } %>
-   </div>
+   <% if @comments.present? %>
+     <div id="comment-post-<%= @post.id.to_s %>">
+       <%= render 'comment_list', { post: @post } %>
+     </div>
+   <% else %>
+     &nbsp;まだレビューはありません。
+   <% end %>
 
    <br>
    <hr>
