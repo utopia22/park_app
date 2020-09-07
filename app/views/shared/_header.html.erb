@@ -18,6 +18,9 @@
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
       </li>
      <% else %>
+       <li class="btn btn-info">
+         <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
+       </li>
        <li class="btn btn-success">
          <%= link_to "公園一覧", root_path %>
        </li>

@@ -12,4 +12,12 @@ class User < ApplicationRecord
   has_many :like_posts, through: :likes, source: :post
 
   has_many :comments, dependent: :destroy
+
+  def self.guest
+    find_or_create_by!(name: 'マーズギャ', email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      #user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+    end
+  end
+
 end
