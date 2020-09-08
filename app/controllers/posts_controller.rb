@@ -3,10 +3,9 @@ class PostsController < ApplicationController
 
   def index
     flash[:notice] = "「いいね！」、「レビュー」をするにはログインが必要です。" unless user_signed_in?
-    @posts = Post.all.order(created_at: :desc)
-    @posts = Post.all.page(params[:page]).per(10)
+    @posts = Post.all.order(created_at: :desc).page(params[:page]).per(10)
     if params[:tag]
-      @posts = Post.tagged_with("#{params[:tag]}")
+      @posts = Post.tagged_with("#{params[:tag]}").page(params[:page]).per(10)
     end
 
     @tags = ActsAsTaggableOn::Tag.all

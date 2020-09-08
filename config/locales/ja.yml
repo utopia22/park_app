@@ -11,12 +11,3 @@ ja:
         age: '年齢'
         address: '住所'
         image_name: 'イメージ'
-
-ja:
-  views:
-    pagination:
-      first: "&laquo; 最初"
-      last: "最後 &raquo;"
-      previous: "&lsaquo; 前"
-      next: "次 &rsaquo;"
-      truncate: "..."
