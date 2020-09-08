@@ -1,8 +1,12 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
-  storage :file
-  process convert: 'jpg'
-  
+
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
+  end
+
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
@@ -16,6 +20,14 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def filename
-    "#{Time.zone.now.strftime('%Y%m%d%H%M%S')}.jpg" if original_filename.present?
+    "#{secure_token}.#{file.extension}" if original_filename.present?
   end
+
+  protected
+
+  def secure_token
+    var = :"@#{mounted_as}_secure_token"
+    model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.uuid)
+  end
+
 end

@@ -3,10 +3,17 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root "posts#index"
-  
-  devise_for :users
+
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
+  }
   get '/users/:id', to: 'users#show', as: 'user'
   get '/users/', to: 'users#index'
+
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
 
   resources :posts do
     resources :comments, only: [:create, :destroy]

@@ -18,6 +18,26 @@
   padding: 2rem;
 }
 
+.container-edit {
+  border: 1px solid gray;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 7px #c1ced7;
+}
+
+.container-login {
+  border: 1px solid gray;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 7px #c1ced7;
+}
+
 // 「ログインしました」などのフラッシュ用スタイル
 
 .alert-notice {
@@ -47,10 +67,10 @@ header {
   text-decoration: none;
 }
 
+
 .header-logo {
   font-family: Pacifico, sans-serif;
   font-size: 45px;
-  color: white;
   display: inline-block;
   margin-left: 20px;
 }
@@ -66,6 +86,7 @@ header {
   font-size: 13px;
   color: white;
   padding-left: 15px;
+  opacity: 80%;
 }
 
 .header-menus a {
@@ -83,4 +104,9 @@ body {
 footer {
   background-color: #99FF99;
   color: white;
+}
+
+/*ページネーション*/
+.pagination ul{
+  background-color: white;
 }

@@ -2,6 +2,10 @@
   <div class="show-park">
     <p><i class="fa fa-leaf" aria-hidden="true"></i> <%= @post.park %></p>
   </div>
+  <div class="tag-list">
+    <%= raw(@post.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')) %>
+  </div>
+  <br>
   <div class="post-show-image">
     <%= image_tag @post.image_url(:thumb) if @post.image.present? %>
   </div>
@@ -17,7 +21,7 @@
     <p><i class="fa fa-train"> </i> アクセス</p>
     <p><%= @post.access %></p>
   </div>
-  <div class="p-map">
+  <div class="map-show">
     <p><i class="fa fa-map" aria-hidden="true"> </i> 公園の地図</p>
     <iframe
        src="https://maps.google.co.jp/maps?output=embed&q=<%= @post.location %>&t=m&z=15"
@@ -39,22 +43,34 @@
 
   <br>
 
-   <div class="row-actions" id="comment-form-post-<%= @post.id.to_s %>">
-     <%= form_with model: [@post, Comment.new], class: "w-100" do |f| %>
-       <%= f.hidden_field :user_id, value: current_user.id %>
-       <%= f.hidden_field :post_id, value: @post.id %>
-       <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "レビューする ...", autocomplete: :off %>
-     <% end %>
-   </div>
+  <% if user_signed_in? %>
+    <div class="row-actions" id="comment-form-post-<%= @post.id.to_s %>">
+       <%= form_with model: [@post, Comment.new], class: "w-100" do |f| %>
+         <%= f.hidden_field :user_id, value: current_user.id %>
+         <%= f.hidden_field :post_id, value: @post.id %>
+        <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "レビューする ...", autocomplete: :off %>
+      <% end %>
+    </div>
+  <% else %>
+  <p class="post-review">
+    <i class="fa fa-angle-double-right"></i><%= link_to "レビューするにはこちらからのログインが必要です。", new_user_session_path %>
+  </p>
+  <br>
+  <br>
+  <% end %>
 
    <ul class="user-tabs">
      <li class="active"><%= link_to("「レビュー」したユーザー", "/posts/#{@post.id}") %></li>
      <li><%= link_to("「いいね！」したユーザー", "/posts/#{@post.id}/likes") %></li>
    </ul>
    <br>
-   <div id="comment-post-<%= @post.id.to_s %>">
-     <%= render 'comment_list', { post: @post } %>
-   </div>
+   <% if @comments.present? %>
+     <div id="comment-post-<%= @post.id.to_s %>">
+       <%= render 'comment_list', { post: @post } %>
+     </div>
+   <% else %>
+     まだレビューはありません。
+   <% end %>
 
    <br>
    <hr>

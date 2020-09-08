@@ -11,6 +11,7 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
 gem 'jbuilder', '~> 2.7'
 
+
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'rb-readline'
@@ -33,9 +34,11 @@ gem 'activeadmin'
 
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'fog-aws'
 gem 'carrierwave'
+gem 'fog-aws'
 gem 'rmagick'
+gem 'mini_magick'
 gem 'devise'
 gem 'redcarpet', '~> 2.3.0'
 gem 'acts-as-taggable-on', '~> 6.0'
-gem 'uglifier'

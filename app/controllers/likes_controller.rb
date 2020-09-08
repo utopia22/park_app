@@ -3,6 +3,7 @@ class LikesController < ApplicationController
 
   def index
     @like_post = current_user.like_posts
+    flash[:notice] = "ログイン済ユーザーのみいいねをつけられます" unless user_signed_in?
   end
 
   def create
