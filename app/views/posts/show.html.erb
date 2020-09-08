@@ -52,7 +52,9 @@
       <% end %>
     </div>
   <% else %>
-  <p class="post-review">レビューするにはログインが必要です。</p>
+  <p class="post-review">
+    <i class="fa fa-angle-double-right"></i><%= link_to "レビューするにはこちらからのログインが必要です。", new_user_session_path %>
+  </p>
   <br>
   <br>
   <% end %>
