@@ -112,17 +112,21 @@ nav {
   height: 47px;
   margin-top: 25px;
   margin-bottom: 10px;
-  background-color: #D7EEFF;
+  background-color: #FFDDFF;
 }
 
 ul.pagination {
   position:absolute;
-  background-color: #D7EEFF;
+  background-color: #FFDDFF;
   top: 0px;
 }
 
+li.page-item{
+  height: 47px;
+}
+
 li.page-item.active {
-  background-color: #D7EEFF;
+  background-color: #FFDDFF;
 }
 
 .pagination>li>a {
