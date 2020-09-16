@@ -1,5 +1,6 @@
 # LittlePark
-![Uploading スクリーンショット 2020-09-16 19.12.37.png…]()
+![agent_you](https://user-images.githubusercontent.com/50666202/93332887-7c57d780-f85d-11ea-8b3d-f367be8e890e.jpg)
+
 
 【URL】
 https://little-park.herokuapp.com  
@@ -61,4 +62,4 @@ https://github.com/utopia22/park_app
 
 ## 制作者
 
-  関真也（Seki Shinya）
+  愁（syuu）
