@@ -1,4 +1,4 @@
-class Post < ApplicationRecord
+class Park< ApplicationRecord
   mount_uploader :image, ImageUploader
   has_many :likes, -> { order(created_at: :desc) }, dependent: :destroy
   has_many :like_users, through: :likes, source: 'user'

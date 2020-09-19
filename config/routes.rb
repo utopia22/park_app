@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  root "posts#index"
+  root "parks#index"
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -15,17 +15,17 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
 
-  resources :posts do
+  resources :parks do
     resources :comments, only: [:create, :destroy]
     resources :likes, only: [:create, :destroy]
   end
 
   get "users/:id/likes" => "users#likes"
-  get "posts/:id/likes" => "posts#likes"
+  get "parks/:id/likes" => "parks#likes"
 
-  get '/post/hashtag/:name' => 'posts#hashtag'
-  get '/post/hashtag' => 'posts#hashtag'
+  get '/park/hashtag/:name' => 'parks#hashtag'
+  get '/park/hashtag' => 'parks#hashtag'
 
-  get 'tags/:tag', to: 'posts#index', as: :tag
+  get 'tags/:tag', to: 'parks#index', as: :tag
 
 end

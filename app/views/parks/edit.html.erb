@@ -1,7 +1,7 @@
 <div class="d-flex align-parks-center">
   <h1>編集</h1>
   <div class="ml-auto posts_button">
-    <%= link_to '投稿一覧', posts_path, class: 'btn btn-outline-info' %>
+    <%= link_to '投稿一覧', parks_path, class: 'btn btn-outline-info' %>
   </div>
 </div>
 
@@ -46,7 +46,7 @@
 
 <div class="form-group">
   <%= f.label :tag_list, 'タグをカンマ区切りで入力' %>
-  <%= text_field_tag 'post[tag_list]', @post.tag_list.join(","), :class => "form-control" %>
+  <%= text_field_tag 'park[tag_list]', @park.tag_list.join(","), :class => "form-control" %>
   <small id="tag-tip" class="form-text text-muted">
       ダグを入力してください。
   </small>

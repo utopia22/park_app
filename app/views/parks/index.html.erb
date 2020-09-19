@@ -4,34 +4,34 @@
 <br>
 <div class="container">
   <div class="row">
-    <% @posts.each do |post| %>
+    <% @parks.each do |park| %>
       <div class="col-md-3 col-sm-6 col-xs-12">
-        <%= link_to("/posts/#{post.id}") do %>
+        <%= link_to("/parks/#{park.id}") do %>
         <div class="main-contents">
           <div class="main-image">
-            <%= image_tag post.image_url(:thumb) if post.image.present? %>
+            <%= image_tag park.image_url(:thumb) if park.image.present? %>
           </div>
 
           <div class="content-wrapper">
             <div class="park">
-              <p><i class="fa fa-leaf" aria-hidden="true"></i> <%= link_to(post.park,"/posts/#{post.id}") %></p>
-              <p><i class="fa fa-train" aria-hidden="true"></i> <%= post.access %></p>
+              <p><i class="fa fa-leaf" aria-hidden="true"></i> <%= link_to(park.park_name,"/parks/#{park.id}") %></p>
+              <p><i class="fa fa-train" aria-hidden="true"></i> <%= park.access %></p>
               <span class="tag-list">
-                <%= raw(post.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')) %>
+                <%= raw(park.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')) %>
               </span>
             </div>
           </div>
 
           <div class="posts-mark">
-            <div id="likes_buttons_<%= post.id %>">
-              <%= render partial: 'likes/like', locals: { post: post, likes: @likes} %>
+            <div id="likes_buttons_<%= park.id %>">
+              <%= render partial: 'likes/like', locals: { park: park, likes: @likes} %>
             </div>
             <div class="comment-list">
-              <%= link_to("/posts/#{post.id}") do %>
+              <%= link_to("/parks/#{park.id}") do %>
     　        <span class="fa fa-comment-o fa-lg" aria-hidden="true"></span>
               <% end %>
                 <a class="comment-count">
-                  <%= post.comments.count %>
+                  <%= park.comments.count %>
                 </a>
             </div>
           </div>
@@ -41,6 +41,6 @@
     <br>
     <% end %>
     <br>
-    <%= paginate @posts %>
+    <%= paginate @parks %>
   </div>
 </div>

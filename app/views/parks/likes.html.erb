@@ -1,27 +1,27 @@
 <div class="post-show">
 
   <div class="show-park">
-    <p><i class="fa fa-leaf" aria-hidden="true"></i> <%= @post.park %></p>
+    <p><i class="fa fa-leaf" aria-hidden="true"></i> <%= @park.park_name %></p>
   </div>
   <div class="post-show-image">
-    <%= image_tag @post.image_url(:thumb) if @post.image.present? %>
+    <%= image_tag @park.image_url(:thumb) if @park.image.present? %>
   </div>
   <br>
   <div class="show-outline">
-    <p><%= @post.outline %></p>
+    <p><%= @park.outline %></p>
   </div>
   <div class="show-locate">
     <p><i class="fa fa-map-marker"></i> 所在地</p>
-    <p><%= @post.location %></p>
+    <p><%= @park.location %></p>
   </div>
   <div class="show-access">
     <p><i class="fa fa-train"></i> アクセス</p>
-    <p><%= @post.access %></p>
+    <p><%= @park.access %></p>
   </div>
   <div class="map-show">
     <p><i class="fa fa-map" aria-hidden="true"> </i> 公園の地図</p>
     <iframe
-      src="https://maps.google.co.jp/maps?output=embed&q=<%= @post.location %>&t=m&z=15"
+      src="https://maps.google.co.jp/maps?output=embed&q=<%= @park.location %>&t=m&z=15"
       width="100%"
       height="auto"
       frameborder="0"
@@ -33,17 +33,17 @@
   <br>
   <br>
   <div class="posts-mark">
-  <div id="likes_buttons_<%= @post.id %>">
-     <%= render partial: 'likes/like', locals: { post: @post, likes: @likes} %>
+  <div id="likes_buttons_<%= @park.id %>">
+     <%= render partial: 'likes/like', locals: { park: @park, likes: @likes} %>
   </div>
  </div>
  <br>
 
  <% if user_signed_in? %>
-   <div class="row-actions" id="comment-form-post-<%= @post.id.to_s %>">
-      <%= form_with model: [@post, Comment.new], class: "w-100" do |f| %>
+   <div class="row-actions" id="comment-form-post-<%= @park.id.to_s %>">
+      <%= form_with model: [@park, Comment.new], class: "w-100" do |f| %>
         <%= f.hidden_field :user_id, value: current_user.id %>
-        <%= f.hidden_field :post_id, value: @post.id %>
+        <%= f.hidden_field :post_id, value: @park.id %>
        <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "レビューする ...", autocomplete: :off %>
      <% end %>
    </div>
@@ -51,12 +51,12 @@
 
 
   <ul class="user-tabs">
-    <li><%= link_to("「レビュー」したユーザー", "/posts/#{@post.id}") %></li>
-    <li  class="active"><%= link_to("「いいね！」したユーザー", "/posts/#{@post.id}/likes") %></li>
+    <li><%= link_to("「レビュー」したユーザー", "/parks/#{@park.id}") %></li>
+    <li  class="active"><%= link_to("「いいね！」したユーザー", "/parks/#{@park.id}/likes") %></li>
   </ul>
   <br>
   <% if @likes.present? %>
-    <% @post.likes.each do |like| %>
+    <% @park.likes.each do |like| %>
       <div class="mb-2">
         <span>
           <div class="comment-user-image">
@@ -76,7 +76,7 @@
   <hr>
   <br>
   <div class="ml-auto posts_button">
-    <a class="btn btn-outline-info" href="/posts" role="button">公園一覧へ</a>
+    <a class="btn btn-outline-info" href="/parks" role="button">公園一覧へ</a>
   </div>
 
 </div>
