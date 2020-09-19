@@ -2,14 +2,14 @@ require 'csv'
 
 namespace :import_csv do
 
-  desc "postテーブルのCSVデータをインポートするタスク"
-  task posts: :environment do
-    path = File.join Rails.root, "db/csv_data/post_data.csv"
+  desc "parkテーブルのCSVデータをインポートするタスク"
+  task parks: :environment do
+    path = File.join Rails.root, "db/csv_data/park_data.csv"
     list = []
     CSV.foreach(path, headers: true) do |row|
       list << {
           image: File.open("#{Rails.root}/#{row["image"]}"),
-          park: row["park"],
+          park_name: row["park_name"],
           outline: row["outline"],
           location: row["location"],
           access: row["access"],
@@ -17,7 +17,7 @@ namespace :import_csv do
       }
     end
     puts "インポート処理を開始"
-     Post.create!(list)
+     Park.create!(list)
       puts "インポート完了!!"
   end
 

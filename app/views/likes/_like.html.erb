@@ -1,19 +1,19 @@
 <% if user_signed_in? %>
-  <% unless post.like_user(current_user.id).blank? %>
-    <%= link_to post_like_path(post_id: post.id ,id: post.likes[0].id), method: :delete, remote: true do %>
+  <% unless park.like_user(current_user.id).blank? %>
+    <%= link_to park_like_path(park_id: park.id ,id: park.likes[0].id), method: :delete, remote: true do %>
       <div class="vertical_like">
         <i class="material-icons red-text">favorite</i>
           <span class="red-text">
-            <%= post.like_users.count %>
+            <%= park.like_users.count %>
           </span>
       </div>
    <% end %>
 <% else %>
-  <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
+  <%= link_to park_likes_path(park.id), method: :park, remote: true do %>
     <div class="vertical_like">
       <i class="material-icons grey-text text-darken-2">favorite_border</i>
         <span class="grey-text text-darken-2">
-          <%= post.like_users.count %>
+          <%= park.like_users.count %>
         </span>
     </div>
   <% end %>
@@ -21,18 +21,18 @@
 
 <% else %>
 
-  <% if post.likes_count %>
+  <% if park.likes_count %>
     <div class="vertical_like">
       <i class="material-icons red-text">favorite</i>
         <span class="red-text">
-          <%= post.likes_count %>
+          <%= park.likes_count %>
         </span>
     </div>
   <% else %>
     <div class="vertical_like">
       <i class="material-icons grey-text text-darken-2">favorite_border</i>
         <span class="grey-text text-darken-2">
-          <%= post.likes_count %>
+          <%= park.likes_count %>
         </span>
     </div>
   <% end %>
