@@ -23,9 +23,6 @@ Rails.application.routes.draw do
   get "users/:id/likes" => "users#likes"
   get "parks/:id/likes" => "parks#likes"
 
-  get '/park/hashtag/:name' => 'parks#hashtag'
-  get '/park/hashtag' => 'parks#hashtag'
-
   get 'tags/:tag', to: 'parks#index', as: :tag
 
 end

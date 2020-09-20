@@ -1,8 +1,8 @@
 class Like < ApplicationRecord
   validates :user_id, {presence: true}
-  validates :post_id, {presence: true}
-  validates :user_id, uniqueness: { scope: :post_id }
+  validates :park_id, {presence: true}
+  validates :user_id, uniqueness: { scope: :park_id }
 
   belongs_to :user
-  belongs_to :post
+  belongs_to :park
 end

@@ -1,3 +1,3 @@
 ActiveAdmin.register Park do
-   permit_params :image, :park_name, :outline, :location, :access, :tag_list
+   permit_params :image, :park_name, :outline, :location, :access, :tag_list, :user_id
 end

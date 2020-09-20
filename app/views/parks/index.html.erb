@@ -4,6 +4,7 @@
 <br>
 <div class="container">
   <div class="row">
+    <%= @tag_name %>
     <% @parks.each do |park| %>
       <div class="col-md-3 col-sm-6 col-xs-12">
         <%= link_to("/parks/#{park.id}") do %>

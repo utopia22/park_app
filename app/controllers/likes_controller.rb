@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  before_action :set_post
+  before_action :set_park
 
   def index
     @like_park = current_user.like_parks
@@ -7,7 +7,7 @@ class LikesController < ApplicationController
   end
 
   def create
-     @like = Like.create(user_id: current_user.id, post_id: params[:park_id])
+     @like = Like.create(user_id: current_user.id, park_id: params[:park_id])
      @likes = Like.where(park_id: params[:park_id])
      @park.reload
    end
@@ -21,8 +21,8 @@ class LikesController < ApplicationController
 
    private
 
-   def set_post
-     @park = Park.find(params[:park_id])
+   def set_park
+     @park = park.find(params[:park_id])
    end
 
 

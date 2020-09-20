@@ -6,10 +6,10 @@ class User < ApplicationRecord
 
   mount_uploader :image_name, ImageUploader
 
-  has_many :posts, dependent: :destroy
+  has_many :parks, dependent: :destroy
 
   has_many :likes, dependent: :destroy
-  has_many :like_posts, through: :likes, source: :post
+  has_many :like_parks, through: :likes, source: :park
 
   has_many :comments, dependent: :destroy
 
