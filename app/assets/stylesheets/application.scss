@@ -107,6 +107,11 @@ footer {
 }
 
 /*ページネーション*/
+ul:not(.browser-default) {
+  padding-left: 40%;
+  list-style-type: none;
+}
+
 nav {
   position:relative;
   height: 47px;
